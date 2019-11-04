@@ -7,7 +7,7 @@ Här kan man lägga till, redigera, radera dessa json data.<br />
 src/css/main.css<br />
 src/Images/Logo.jpg<br />
 src/includes/config.php<br />
-src/includes/header.php<br /><br />
+src/includes/header.php<br />
 src/includes/footer.php<br />
 src/includes/classes/admin.class.php<br />
 src/js/functions.js<br />
