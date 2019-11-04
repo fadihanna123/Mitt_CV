@@ -27,3 +27,5 @@ Du behöver också ändra SQL uppgifter från din localhost till din egen i dess
 admin.class.php rad 8.<br />
 change.php rad 33, 80, 126 och 171.<br />
 
+# Programmeringsspråk:
+HTML, CSS, Javascript, SASS, PHP.
