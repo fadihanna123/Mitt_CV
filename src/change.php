@@ -217,7 +217,6 @@ session_start();
 		// Lägger till händelsehantering för knappen
 	change1.addEventListener("click", function(){
 		// Deklarera de önskade data från formulärdata
-		tabellname = document.getElementById("hid2").value;
         let fullname = document.getElementById("fullname").value; 
         let epost = document.getElementById("epost").value; 
         let mobnr = document.getElementById("mobnr").value; 
