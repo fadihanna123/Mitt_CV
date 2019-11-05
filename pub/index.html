@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+
+<html lang="sv">
+<head>
+	<meta charset="utf-8" />
+	<!-- Importera Jquerysbibliotek -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- Importera functions js filen -->
+	<script src="js/functions.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Importera main.css filen -->
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Mitt CV - Startsida</title>
+</head>
+
+<body>
+	<div id="container">
+		<!-- Definera sidhuvudet -->
+		<div class="header">
+			<!-- Definera logobilden -->
+			<div class="logobox">
+				<a href="./index.php">
+					<img src="./Images/Logo.jpg" alt="Logobild" id="logobild" />
+				</a>
+			</div>
+		</div>
+		<!-- Definera länkmeny -->
+			<div class="meny">
+				<a href="index.php" class="speclink">Startsida</a>
+			</div>
+<!-- Definera mittsdeln -->
+<div class="main">
+	<!-- Definera vänsterdelen -->
+	<div class="left">
+		<!-- Definera Presentation -->
+	<h1>Presentation</h1>	
+		
+			<!-- Läsa in cv_press data -->
+			<div id='here1'>
+			<script>show('cv_pres');</script> <br />
+			</div>
+			
+			
+		
+	</div>
+	<!-- Definera centerdelen -->
+	<div class="center">
+		<h1>Mina studier</h1>
+			
+			<!-- Läsa in cv_studie data -->
+			<div id='here2'>
+			<script>show('cv_studie');</script> <br />
+			</div>
+			 
+			<br /><br />
+			
+		
+
+	</div>
+	<!-- Definera högerdelen -->
+	<div class="right">
+		<h1>Mina erfarenheter</h1>
+		<!-- Läsa in cv_work data -->
+		<div id='here3'>
+			<script>show('cv_work');</script> <br />
+		</div>
+		
+			
+	</div>
+</div>
+<div class="left2">
+	<h1>Mina skapade webbplatser</h1>
+	<!-- Läsa in cv_webpages data -->
+	<div id='here4'>
+			<script>show('cv_webpages');</script> <br />
+		</div>
+			
+	
+</div>
+
+<hr />
+<!-- Definera sidfoten -->
+<div class="footer">
+	&copy;  Copyright 2019 Mitt CV 
+</div>
+</div>
+<!-- Importera functions.js filen -->
+<script src="js/functions.js"></script>
+</body>
+</html>
