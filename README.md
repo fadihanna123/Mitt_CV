@@ -21,6 +21,7 @@ src/logout.php<br />
 pub/Images/Logo.jpg<br />
 pub/js/functions.js<br />
 pub/css/main.css<br />
+pub/index.html
 # Installation<br />
 Du behöver först ladda ner dessa filer och tillämpa inställningar för databasen som finns i:<br />
 https://github.com/fadihanna123/Projekt_data<br />
