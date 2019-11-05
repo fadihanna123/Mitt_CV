@@ -18,7 +18,9 @@ src/contact.php<br />
 src/index.php<br />
 src/login.php<br />
 src/logout.php<br />
-Alla dessa filer finns i src.<br />
+pub/Images/Logo.jpg<br />
+pub/js/functions.js<br />
+pub/css/main.css<br />
 # Installation<br />
 Du behöver först ladda ner dessa filer och tillämpa inställningar för databasen som finns i:<br />
 https://github.com/fadihanna123/Projekt_data<br />
