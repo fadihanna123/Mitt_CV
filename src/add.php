@@ -1,17 +1,30 @@
 <?php
-// Starta session
+
+	// Starta session
 	session_start(); 
+
 ?>
-<?php $title = "Lägg till data"; ?>
+<?php 
+
+	$title = "Lägg till data";
+
+?>
 <!-- Importera sidhuvud -->
-<?php require "includes/header.php"; ?>
+<?php 
+	
+	require "includes/header.php"; 
+
+?>
 <?php
+
 	// Importera klassen Admin och anropa den
 	require "includes/config.php";
 	$anrop = new Admin();
+
 ?>
 <?php
-			if(!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw']))
+
+			if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw']))
 			{ // Om det inte finns session då visa felmeddelande om inloggning
 				echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
 
@@ -26,7 +39,7 @@
 		<h1 id="spech11">Lägga till data</h1>
 		<p style='margin-left: 14%;'>Här kan du lägga till nya data.</p>
 		<?php 
-		if($_GET['tabell'] == "cv_studie")
+		if ($_GET['tabell'] == "cv_studie")
 		{ // Om det skickade tabellnamn i adressraden är cv_studie
 		
 			echo "<form style='margin-left: 12%;'>
@@ -59,7 +72,7 @@
    
 
 
-		if($_GET['tabell'] == "cv_work")
+		if ($_GET['tabell'] == "cv_work")
 		{ // Om det skickade tabellnamn i adressraden är cv_work
 			echo "<form style='margin-left: 10%;'>
 		<table>
@@ -92,7 +105,7 @@
    
 	
 
-		if($_GET['tabell'] == "cv_webpages")
+		if ($_GET['tabell'] == "cv_webpages")
 		{ // Om det skickade tabellnamn i adressraden är cv_webpages
 		
 			echo "<form id='specform22'>
@@ -118,23 +131,22 @@
 		</table>
 		</form>";
 		} // Slut om det skickade tabellnamn i adressraden är cv_studie
-   
-		
+
 		?>
 		<script>
 			//  Koden för att lägg till studier 
 			// Definera knappen lägg till studier
 			let add1 = document.getElementById("add1");
-			if(add1 !=null)
+			if (add1 !=null)
 			{ 
 				// Lägger till händelsehantering för knappen
-			 add1.addEventListener("click", function(){
+			 add1.addEventListener("click", () =>{
 			// Deklarera studieformulärdata
         	let addstudiesschool = $("#addstudiesschool").val();
         	let addcourse_name = $("#addcourse_name").val();
         	let addStarttime_studies = $("#addStarttime_studies").val();
         	let addStoptime_studies = $("#addStoptime_studies").val();
-        if( !(addstudiesschool != '' && addcourse_name != '' && addStarttime_studies != '' && addStoptime_studies != ''))
+        if (!(addstudiesschool != '' && addcourse_name != '' && addStarttime_studies != '' && addStoptime_studies != ''))
         	{ // Om det inte finns värde i alla studietextfält
         	// Uppdatera sidan.
         	 location.reload();
@@ -161,16 +173,16 @@
 			//  Koden för att lägg till erfarenheter 
 			// Definera knappen lägg till erfarenheter
 			let add2 = document.getElementById("add2");
-			if(add2 !=null)
+			if (add2 !=null)
 			{
-				// Lägger till händelsehantering för knappen
+			 // Lägger till händelsehantering för knappen
 			 add2.addEventListener("click", function(){
 			// Deklarera erfarenheterformulärdata
         	let addworkplace = $("#addworkplace").val();
         	let addwork_title = $("#addwork_title").val();
         	let addStarttime_work = $("#addStarttime_work").val();
         	let addStoptime_work = $("#addStoptime_work").val();
-        if( !(addworkplace != '' && addwork_title != '' && addStarttime_work != '' && addStoptime_work != ''))
+        if (!(addworkplace != '' && addwork_title != '' && addStarttime_work != '' && addStoptime_work != ''))
         	{ // Om det inte finns värde i alla erfarenhetersfält
         	// Uppdatera sidan.
         	 location.reload();
@@ -195,7 +207,7 @@
 		//  Koden för att lägg till webbssidor 
 		// Definera knappen lägg till webbssidor
 		let add3 = document.getElementById("add3");
-			if(add3 !=null)
+			if (add3 !=null)
 			{
 				// Lägger till händelsehantering för knappen
 			 add3.addEventListener("click", function(){
@@ -203,7 +215,7 @@
 			let addwebpage_title = $("#addwebpage_title").val();
         	let addwebpage_url = $("#addwebpage_url").val();
         	let addwebpage_des = $("#addwebpage_des").val();
-        if( !(addwebpage_title != '' && addwebpage_url != '' && addwebpage_des != ''))
+        if (!(addwebpage_title != '' && addwebpage_url != '' && addwebpage_des != ''))
         	{ // Om det inte finns värde i alla webbsidaformulärdata
         	// Uppdatera sidan.
         	 location.reload();
@@ -227,4 +239,8 @@
 	</div>
 </div>
 	<!-- Definera sidfoten och inkludera den -->
-	<?php require "includes/footer.php"; ?>
+	<?php 
+		
+		require "includes/footer.php"; 
+	
+	?>
