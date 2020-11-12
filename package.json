@@ -9,11 +9,11 @@
   "author": "Fadi Hanna",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "grunt-php": "^3.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -22,11 +22,11 @@
     "gulp-connect-php": "^1.0.3",
     "gulp-sass": "^4.0.2",
     "gulp-uglify-es": "^2.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^4.0.5"
   },
   "dependencies": {
     "gulp-cli": "^2.3.0",
     "gulp-concat-css": "^3.1.0",
-    "gulp-typescript": "^5.0.1"
+    "gulp-typescript": "^6.0.0-alpha.1"
   }
 }
