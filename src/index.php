@@ -7,7 +7,6 @@ session_start(); ?>
 <?php
 // Importera klassen Admin och anropa den
 // Importera klassen Admin och anropa den
-?>
 require "includes/config.php";
 $anrop = new Admin();
 ?>
