@@ -1,14 +1,15 @@
-<?php 
+<?php
 // Starta session
-session_start(); 
-?>
+session_start(); ?>
 <?php $title = "Startsida"; ?>
 <!-- Importera sidhuvud -->
 <?php require "includes/header.php"; ?>
 <?php
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";
-	$anrop = new Admin();
+// Importera klassen Admin och anropa den
+// Importera klassen Admin och anropa den
+?>
+require "includes/config.php";
+$anrop = new Admin();
 ?>
 <!-- Definera mittsdelen -->
 <div class="main">

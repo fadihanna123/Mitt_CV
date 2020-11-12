@@ -1,4 +1,5 @@
 # CV hemsida<br />
+
 Den här hemsidan visar CV data beror på json data och databas data som skickas från användare.<br />
 Den här hemsidan består av dessa länkar: Startsida, Kontakta oss och Logga in. Den här hemsidan består av interna delar som: lägg till data, redigera delen.<br />
 Här kan man lägga till, redigera, radera dessa json data.<br />
@@ -22,7 +23,9 @@ pub/Images/Logo.jpg<br />
 pub/js/functions.js<br />
 pub/css/main.css<br />
 pub/index.html
+
 # Installation<br />
+
 Du behöver först ladda ner dessa filer och tillämpa inställningar för databasen som finns i:<br />
 https://github.com/fadihanna123/Projekt_data<br />
 <br />
@@ -31,4 +34,5 @@ admin.class.php rad 8.<br />
 change.php rad 33, 80, 126 och 171.<br />
 
 # Programmeringsspråk:
+
 HTML, CSS, Javascript, SASS, PHP.

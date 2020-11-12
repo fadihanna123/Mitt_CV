@@ -1,16 +1,17 @@
 <?php
 // Starta session
 
-session_start(); 
-?>
+session_start(); ?>
 <?php $title = "Logga in"; ?>
 <!-- Importera sidhuvud -->
 <?php require "includes/header.php"; ?>
 <?php
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";
-	require "includes/classes/admin.class.php";
-	$anrop = new Admin();
+// Importera klassen Admin och anropa den
+// Importera klassen Admin och anropa den
+?>
+require "includes/config.php";
+require "includes/classes/admin.class.php";
+$anrop = new Admin();
 ?>
 <!-- Definera mittsdelen -->
 
@@ -18,12 +19,12 @@ session_start();
 		<!-- Definera centerdelen -->
 	<div class="center" style="border: none;
 	margin-left: 5%;">
-		<?php 
-			if(isset($_SESSION['loginepost']) && isset($_SESSION['loginepsw']))
-			{ // Om det finns session(inloggad)
-				header("location: index.php");
-			} // Slut om det finns session(inloggad)
-		?>
+		<?php if (isset($_SESSION['loginepost']) && isset($_SESSION['loginepsw'])) {
+      // Om det finns session(inloggad)
+      header("location: index.php");
+  }
+// Slut om det finns session(inloggad)
+?>
 		<!-- Definera inloggningsformulär -->
 		<div class="myfrm2" style="
 		margin-left: 50%;">
@@ -47,23 +48,19 @@ session_start();
 			</table>
 			</form>
 			</div>
-			<?php
-				if(isset($_POST['loginbtn']))
-				{ // Om man tryckte på logga in knappen
-					if(isset($_POST['logepost']) && isset($_POST['logpsw']))
-					{ // Om det finns värde i dessa textfält: e-postadress och lösenord.
-						$anrop->login($_POST['logepost'], $_POST['logpsw']);
-						
-
-					}  // Slut om det finns värde i dessa textfält: e-postadress och lösenord.
-					else
-					{  // Om det inte finns värde i dessa textfält: e-postadress och lösenord.
-						echo "<br /><span class='error' style='position: relative;
+			<?php if (isset($_POST['loginbtn'])) {
+       // Om man tryckte på logga in knappen
+       if (isset($_POST['logepost']) && isset($_POST['logpsw'])) {
+           // Om det finns värde i dessa textfält: e-postadress och lösenord.
+           $anrop->login($_POST['logepost'], $_POST['logpsw']);
+       }
+       // Slut om det finns värde i dessa textfält: e-postadress och lösenord.
+       else {
+           // Om det inte finns värde i dessa textfält: e-postadress och lösenord.
+           echo "<br /><span class='error' style='position: relative;
 					left: 100px;'>Du behöver fylla in alla nödvändiga fält.</span><br />";
-					} // Slut om det inte finns värde i dessa textfält: e-postadress och lösenord.
-				}
-
-			?>
+       } // Slut om det inte finns värde i dessa textfält: e-postadress och lösenord.
+   } ?>
 
 	</div>
 </div>

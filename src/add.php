@@ -1,35 +1,22 @@
 <?php
 
-	// Starta session
-	session_start(); 
-
-?>
-<?php 
-
-	$title = "Lägg till data";
-
-?>
+// Starta session
+session_start(); ?>
+<?php $title = "Lägg till data"; ?>
 <!-- Importera sidhuvud -->
-<?php 
-	
-	require "includes/header.php"; 
-
-?>
+<?php require "includes/header.php"; ?>
 <?php
-
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";
-	$anrop = new Admin();
-
+// Importera klassen Admin och anropa den
+// Importera klassen Admin och anropa den
 ?>
-<?php
-
-			if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw']))
-			{ // Om det inte finns session då visa felmeddelande om inloggning
-				echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
-
-
-			} // Slut om det inte finns session då visa felmeddelande om inloggning
+require "includes/config.php";
+$anrop = new Admin();
+?>
+<?php if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
+    // Om det inte finns session då visa felmeddelande om inloggning
+    echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
+}
+// Slut om det inte finns session då visa felmeddelande om inloggning
 ?>
 <!-- Definera mittsdelen -->
 <div class="main">
@@ -38,11 +25,10 @@
 		<!-- Lägg till rubriken lägg till data -->
 		<h1 id="spech11">Lägga till data</h1>
 		<p style='margin-left: 14%;'>Här kan du lägga till nya data.</p>
-		<?php 
-		if ($_GET['tabell'] == "cv_studie")
-		{ // Om det skickade tabellnamn i adressraden är cv_studie
-		
-			echo "<form style='margin-left: 12%;'>
+		<?php
+  if ($_GET['tabell'] == "cv_studie") {
+      // Om det skickade tabellnamn i adressraden är cv_studie
+      echo "<form style='margin-left: 12%;'>
 		<table>
 			<tr>
 				<td>Lärosäte: </td>
@@ -68,13 +54,10 @@
 			</tr>
 		</table>
 		</form>";
-		} // Slut om det skickade tabellnamn i adressraden är cv_studie
-   
-
-
-		if ($_GET['tabell'] == "cv_work")
-		{ // Om det skickade tabellnamn i adressraden är cv_work
-			echo "<form style='margin-left: 10%;'>
+  } // Slut om det skickade tabellnamn i adressraden är cv_studie
+  if ($_GET['tabell'] == "cv_work") {
+      // Om det skickade tabellnamn i adressraden är cv_work
+      echo "<form style='margin-left: 10%;'>
 		<table>
 			<tr>
 				<td>Arbetsställe: </td>
@@ -101,14 +84,10 @@
 			</tr>
 		</table>
 		</form>";
-		} // Slut om det skickade tabellnamn i adressraden är cv_studie
-   
-	
-
-		if ($_GET['tabell'] == "cv_webpages")
-		{ // Om det skickade tabellnamn i adressraden är cv_webpages
-		
-			echo "<form id='specform22'>
+  } // Slut om det skickade tabellnamn i adressraden är cv_studie
+  if ($_GET['tabell'] == "cv_webpages") {
+      // Om det skickade tabellnamn i adressraden är cv_webpages
+      echo "<form id='specform22'>
 		<table>
 			<tr>
 				<td>Titel: </td>
@@ -130,9 +109,10 @@
 			</tr>
 		</table>
 		</form>";
-		} // Slut om det skickade tabellnamn i adressraden är cv_studie
+  }
 
-		?>
+// Slut om det skickade tabellnamn i adressraden är cv_studie
+?>
 		<script>
 			//  Koden för att lägg till studier 
 			// Definera knappen lägg till studier
@@ -239,8 +219,4 @@
 	</div>
 </div>
 	<!-- Definera sidfoten och inkludera den -->
-	<?php 
-		
-		require "includes/footer.php"; 
-	
-	?>
+	<?php require "includes/footer.php"; ?>

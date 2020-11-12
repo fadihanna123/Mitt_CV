@@ -2,10 +2,9 @@
 <!-- Importera sidhuvud -->
 <?php require "includes/header.php"; ?>
 <?php
-	require "includes/config.php";
-	// Importera klassen Admin och anropa den
-	require "includes/classes/admin.class.php";
-	$anrop = new Admin();
+require "includes/config.php"; // Importera klassen Admin och anropa den
+require "includes/classes/admin.class.php";
+$anrop = new Admin();
 ?>
 <!-- Definera mittsdelen -->
 <div class="main">
@@ -37,24 +36,28 @@
 			</table>
 			</form>
 			</div>
-			<?php
-				if(isset($_POST['contactbtn']))
-				{ // Om man tryckte på skicka knappen
-					if(isset($_POST['fullname']) && isset($_POST['epost']) && isset($_POST['msg']))
-					{ // Om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-						// Anropa kontaktsfunktionen
-						$anrop->Contact($_POST['fullname'], $_POST['epost'], $_POST['msg']);
-						// Visa bekräftelsesmeddelande
-						echo "<span class='green'>Meddelande har skickats</span>";
-					} // Slut om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-					else
-					{ // Om det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-						echo "<br /><span class='error' style='color: red;
+			<?php if (isset($_POST['contactbtn'])) {
+       // Om man tryckte på skicka knappen
+       if (
+           isset($_POST['fullname']) &&
+           isset($_POST['epost']) &&
+           isset($_POST['msg'])
+       ) {
+           // Om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+           // Anropa kontaktsfunktionen
+           $anrop->Contact($_POST['fullname'], $_POST['epost'], $_POST['msg']);
+           // Visa bekräftelsesmeddelande
+           echo "<span class='green'>Meddelande har skickats</span>";
+       }
+       // Slut om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+       else {
+           // Om det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+           echo "<br /><span class='error' style='color: red;
 	margin-left: 50%;'>Du behöver fylla in alla nödvändiga fält.</span><br />";
-					} // Slut det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-				} // Slut om man tryckte på skicka knappen
-
-			?>
+       } // Slut det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+   }
+// Slut om man tryckte på skicka knappen
+?>
 	</div>
 	
 </div>

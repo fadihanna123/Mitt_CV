@@ -1,22 +1,21 @@
-<?php 
+<?php
 // Starta session
-session_start(); 
-?>
+session_start(); ?>
 <?php $title = "Ändra data"; ?>
 <!-- Importera sidhuvud -->
 <?php require "includes/header.php"; ?>
 <?php
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";
-	$anrop = new Admin();
+// Importera klassen Admin och anropa den
+// Importera klassen Admin och anropa den
 ?>
-<?php
-			if(!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw']))
-			{ // Om det inte finns session då visa felmeddelande om inloggning
-				echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
-
-
-			} // Slut om det inte finns session då visa felmeddelande om inloggning
+require "includes/config.php";
+$anrop = new Admin();
+?>
+<?php if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
+    // Om det inte finns session då visa felmeddelande om inloggning
+    echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
+}
+// Slut om det inte finns session då visa felmeddelande om inloggning
 ?>
 <!-- Definera mittsdelen -->
 <div class="main">
@@ -26,16 +25,16 @@ session_start();
 		<h1 id="spech1">Ändra data</h1>
 		<p style='margin-left: 14%;'>Här kan du ändra data.</p>
 
-		<?php 
-		if($_GET['tabell'] == "cv_pres")
-		{ // Om det skickade tabellnamn i adressraden är cv_pres
-		// Ansluta till databasen och importera formulärsdata från databasen
-		$con = mysqli_connect('localhost', 'root', '', 'test');
-		mysqli_set_charset($con, "utf8");			
-		$sql = "SELECT * FROM cv_pres";
-		$result = mysqli_query($con, $sql);
-		$fetch = mysqli_fetch_array($result);
-			echo "<form>
+		<?php
+  if ($_GET['tabell'] == "cv_pres") {
+      // Om det skickade tabellnamn i adressraden är cv_pres
+      // Ansluta till databasen och importera formulärsdata från databasen
+      $con = mysqli_connect('localhost', 'root', '', 'test');
+      mysqli_set_charset($con, "utf8");
+      $sql = "SELECT * FROM cv_pres";
+      $result = mysqli_query($con, $sql);
+      $fetch = mysqli_fetch_array($result);
+      echo "<form>
 		<table>
 			<tr>
 				<td>Fullständigt namn: </td>
@@ -72,18 +71,16 @@ session_start();
 			</tr>
 		</table>
 		</form>";
-   
-		}  // Slut om det skickade tabellnamn i adressraden är cv_pres
-		if($_GET['tabell'] == "cv_studie")
-		{ // Om det skickade tabellnamn i adressraden är cv_studie
-		// Ansluta till databasen och importera formulärsdata från databasen
-		$con = mysqli_connect('localhost', 'root', '', 'test');
-		mysqli_set_charset($con, "utf8");			
-		$sql = "SELECT * FROM cv_studie WHERE id=" . $_GET['id'] . ";";
-		$result = mysqli_query($con, $sql);
-		while($fetch = mysqli_fetch_array($result))
-		{
-			echo "<form id='specform1'>
+  } // Slut om det skickade tabellnamn i adressraden är cv_pres
+  if ($_GET['tabell'] == "cv_studie") {
+      // Om det skickade tabellnamn i adressraden är cv_studie
+      // Ansluta till databasen och importera formulärsdata från databasen
+      $con = mysqli_connect('localhost', 'root', '', 'test');
+      mysqli_set_charset($con, "utf8");
+      $sql = "SELECT * FROM cv_studie WHERE id=" . $_GET['id'] . ";";
+      $result = mysqli_query($con, $sql);
+      while ($fetch = mysqli_fetch_array($result)) {
+          echo "<form id='specform1'>
 		<table>
 			<tr>
 				<td>Lärosäte: </td>
@@ -115,21 +112,17 @@ session_start();
 			</tr>
 		</table>
 		</form>";
-		}
-   
-		}  // Slut om det skickade tabellnamn i adressraden är cv_studie
-
-
-		if($_GET['tabell'] == "cv_work")
-		{  // Om det skickade tabellnamn i adressraden är cv_work
-		// Ansluta till databasen och importera formulärsdata från databasen
-		$con = mysqli_connect('localhost', 'root', '', 'test');
-		mysqli_set_charset($con, "utf8");			
-		$sql = "SELECT * FROM cv_work WHERE id=" . $_GET['id'] . ";";
-		$result = mysqli_query($con, $sql);
-		while($fetch = mysqli_fetch_array($result))
-		{
-			echo "<form style='margin-left: 10%;'>
+      }
+  } // Slut om det skickade tabellnamn i adressraden är cv_studie
+  if ($_GET['tabell'] == "cv_work") {
+      // Om det skickade tabellnamn i adressraden är cv_work
+      // Ansluta till databasen och importera formulärsdata från databasen
+      $con = mysqli_connect('localhost', 'root', '', 'test');
+      mysqli_set_charset($con, "utf8");
+      $sql = "SELECT * FROM cv_work WHERE id=" . $_GET['id'] . ";";
+      $result = mysqli_query($con, $sql);
+      while ($fetch = mysqli_fetch_array($result)) {
+          echo "<form style='margin-left: 10%;'>
 		<table>
 			<tr>
 				<td>Arbetsställe: </td>
@@ -161,20 +154,17 @@ session_start();
 			</tr>
 		</table>
 		</form>";
-		}
-   
-		} // Slut om det skickade tabellnamn i adressraden är cv_work
-
-		if($_GET['tabell'] == "cv_webpages")
-		{ // Om det skickade tabellnamn i adressraden är cv_webpages
-		// Ansluta till databasen och importera formulärsdata från databasen
-		$con = mysqli_connect('localhost', 'root', '', 'test');
-		mysqli_set_charset($con, "utf8");			
-		$sql = "SELECT * FROM cv_webpages WHERE id=" . $_GET['id'] . ";";
-		$result = mysqli_query($con, $sql);
-		while($fetch = mysqli_fetch_array($result))
-		{
-			echo "<form id='specform2'>
+      }
+  } // Slut om det skickade tabellnamn i adressraden är cv_work
+  if ($_GET['tabell'] == "cv_webpages") {
+      // Om det skickade tabellnamn i adressraden är cv_webpages
+      // Ansluta till databasen och importera formulärsdata från databasen
+      $con = mysqli_connect('localhost', 'root', '', 'test');
+      mysqli_set_charset($con, "utf8");
+      $sql = "SELECT * FROM cv_webpages WHERE id=" . $_GET['id'] . ";";
+      $result = mysqli_query($con, $sql);
+      while ($fetch = mysqli_fetch_array($result)) {
+          echo "<form id='specform2'>
 		<table>
 			<tr>
 				<td>Titel: </td>
@@ -202,10 +192,11 @@ session_start();
 			</tr>
 		</table>
 		</form>";
-		}
-   
-		}   // Slut om det skickade tabellnamn i adressraden är cv_webpages   
-		?>
+      }
+  }
+
+// Slut om det skickade tabellnamn i adressraden är cv_webpages
+?>
 		<!-- Här ska den visas resultat efter ändring -->
 	<div id="here"></div>
 	<script>

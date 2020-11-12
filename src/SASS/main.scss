@@ -24,343 +24,275 @@ $ninefivepr: 95%;
 $fiveteenpx: 15px;
 $inlineblock: inline-block;
 $fyrtiopx: 40px;
-body
-{
-	margin: $zero; /* Gör margin 0 för hela hemsidan */
-	font-size: $hundredpr; /* Låt typsnittstorlek 100% i hela hemsidan */
-	background-color: lighten(#f3fce5, 2); /* Låt bakgrundsbild ha färgen #f3fce5 */
+body {
+  margin: $zero; /* Gör margin 0 för hela hemsidan */
+  font-size: $hundredpr; /* Låt typsnittstorlek 100% i hela hemsidan */
+  background-color: lighten(
+    #f3fce5,
+    2
+  ); /* Låt bakgrundsbild ha färgen #f3fce5 */
 }
 
-#speccenter
-{
-	border: $empty;  /* Ta bort ram */
-	margin-left: 30%;  /* Låt den ha margin 30% till vänster */
+#speccenter {
+  border: $empty; /* Ta bort ram */
+  margin-left: 30%; /* Låt den ha margin 30% till vänster */
 }
-#spech1
-{
-	margin-right: $femtiopr;  /* Låt den ha 50% margin till höger */
+#spech1 {
+  margin-right: $femtiopr; /* Låt den ha 50% margin till höger */
 }
-#spech11
-{
-	margin-right: $femtiopr;  /* Låt den ha 50% margin till höger */
+#spech11 {
+  margin-right: $femtiopr; /* Låt den ha 50% margin till höger */
 }
-.studylink
-{
-	margin-left: 38%; /* Låt den ha 38% margin till vänster */
-	font-size: $tjugopx; /* Låt den ha 20% textstorlek */
+.studylink {
+  margin-left: 38%; /* Låt den ha 38% margin till vänster */
+  font-size: $tjugopx; /* Låt den ha 20% textstorlek */
 }
 
-.pagelink
-{
-	margin-left: $fyrtiopx; /* Låt den ha 40% margin till vänster */
-	font-size: $tjugopx; /* Låt den ha 20px textstorlek */
+.pagelink {
+  margin-left: $fyrtiopx; /* Låt den ha 40% margin till vänster */
+  font-size: $tjugopx; /* Låt den ha 20px textstorlek */
 }
 
-.centerit
-{
-	margin-left: $tenpr; /* Låt den ha 20px margin till vänster */
-	font-size: $artonpx; /* Låt den ha 18px textstorlek */
+.centerit {
+  margin-left: $tenpr; /* Låt den ha 20px margin till vänster */
+  font-size: $artonpx; /* Låt den ha 18px textstorlek */
 }
 
-.right2
-{
-	float: $left; /* Flytta hela delen till vänster */
-	width: $threehundred; /* Låt den ha bredden ha 300px */
-	padding: $tenpx; /* Låt den ha avstånd mellan ramar 20px */
+.right2 {
+  float: $left; /* Flytta hela delen till vänster */
+  width: $threehundred; /* Låt den ha bredden ha 300px */
+  padding: $tenpx; /* Låt den ha avstånd mellan ramar 20px */
 }
 
-a
-{
-	text-decoration: $empty; /* Låt alla länkar inte ha understrykning */
+a {
+  text-decoration: $empty; /* Låt alla länkar inte ha understrykning */
 }
 
-
-
-h3
-{
-	margin-left: $tenpr; /* Låt alla h3 ha 20% margin till vänster */
+h3 {
+  margin-left: $tenpr; /* Låt alla h3 ha 20% margin till vänster */
 }
-.green
-{
-	color: darken(green, 2%);  /* Låt den ha grön färg */
-	margin-left: $tenpr; /* Låt den ha 20% margin till vänster */
+.green {
+  color: darken(green, 2%); /* Låt den ha grön färg */
+  margin-left: $tenpr; /* Låt den ha 20% margin till vänster */
 }
 
-*
-{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-.header
-{
-	background: lighten(#c6f17f, 2%); /* Låt sidhuvud ha #c6f17f färg */
-	height: $hundredpr; /* Låt sidhuvud ha höjd 100% */
-	margin: $tenpx; /* Låt den ha 20px margin från alla sidor */
+.header {
+  background: lighten(#c6f17f, 2%); /* Låt sidhuvud ha #c6f17f färg */
+  height: $hundredpr; /* Låt sidhuvud ha höjd 100% */
+  margin: $tenpx; /* Låt den ha 20px margin från alla sidor */
 }
 
-#container
-{
-	font-family: Cambria, Georgia; /* Låt den ha dessa typsnitt: Cambria, Georgia */
-	font-size: 17px; /* Låt den ha textstorlek 17px */
-	margin: $zero $auto; /* Centrera den */
-	width: 1400px; /* Låt den ha bredd 1400pixlar */
-	overflow: $hid; 
+#container {
+  font-family: Cambria, Georgia; /* Låt den ha dessa typsnitt: Cambria, Georgia */
+  font-size: 17px; /* Låt den ha textstorlek 17px */
+  margin: $zero $auto; /* Centrera den */
+  width: 1400px; /* Låt den ha bredd 1400pixlar */
+  overflow: $hid;
 }
-h1
-{
-	text-align: $cntr; /* Flytta alla h1 till mitten */
-	font-style: italic; /* Låt alla h1 ha kursiv */
+h1 {
+  text-align: $cntr; /* Flytta alla h1 till mitten */
+  font-style: italic; /* Låt alla h1 ha kursiv */
 }
-#logobild
-{
-	width: 240px; /* Låt logobilden ha 240px bredd */
-	height: 80px; /* Låt logobilden ha 80px höjd */
-	margin: $tenpx; /* Låt logobilden ha 10px margin från alla sidor */
-}	
-
-.meny
-{	
-	margin-top: $miunshundredpx; /* Låt länkmeny ha margin nere 100px */
-	margin-left: 900px; /* Låt länkmeny ha margin till vänster 900px */
-}
-.bold
-{
-	font-weight: $bold; /* Låt den ha fet texttyp */
-}
-.meny
-{
- 	a
-	{
-		display: $inlineblock; 
-		font-size: $artonpx; /* Låt länkar i länkmeny ha textstorlek 18px */
-		text-decoration: $empty; /* Låt alla länkar i länkmeny inte ha understrykning */
-		color: darken(red, 2%); /* Låt alla länkar i länkmeny ha röd färg */
-		padding: $fyrtiopx; /* Låt alla länkar i länkmeny ha avstånd mellan ramar 40px */
-		font-weight: $bold;
-
-	}
-}
-.error
-{
-	color: darken(red, 2%); /* Låt felmeddelande ha röd färgen */
-	margin-left: -1%; /* Låt felmeddelande ha margin till höger 1% */
+#logobild {
+  width: 240px; /* Låt logobilden ha 240px bredd */
+  height: 80px; /* Låt logobilden ha 80px höjd */
+  margin: $tenpx; /* Låt logobilden ha 10px margin från alla sidor */
 }
 
-.main
-{
-	margin: $zero $tenpx $zero $tenpx; /* Låt mittensdelen ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
-	border: $onepx $solid darken(black, 2%); /* Låt mittensdeln ha ram 1px med solid typ och ha färg svart */
-	border-radius: $fiveteenpx; /* Låt mittensdeln ha rundade ram på storlek 15px */
-	overflow: $hid; 
-	display: flex; 
+.meny {
+  margin-top: $miunshundredpx; /* Låt länkmeny ha margin nere 100px */
+  margin-left: 900px; /* Låt länkmeny ha margin till vänster 900px */
+}
+.bold {
+  font-weight: $bold; /* Låt den ha fet texttyp */
+}
+.meny {
+  a {
+    display: $inlineblock;
+    font-size: $artonpx; /* Låt länkar i länkmeny ha textstorlek 18px */
+    text-decoration: $empty; /* Låt alla länkar i länkmeny inte ha understrykning */
+    color: darken(red, 2%); /* Låt alla länkar i länkmeny ha röd färg */
+    padding: $fyrtiopx; /* Låt alla länkar i länkmeny ha avstånd mellan ramar 40px */
+    font-weight: $bold;
+  }
+}
+.error {
+  color: darken(red, 2%); /* Låt felmeddelande ha röd färgen */
+  margin-left: -1%; /* Låt felmeddelande ha margin till höger 1% */
 }
 
-.left
-{
-	float: $left; /* Flytta hela delen till vänster */
-	width: 250px; /* Låt hela delen bredden ha 250px */
-	padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
-	height: 400px; /* Låt den ha 400px höjd */
-
+.main {
+  margin: $zero $tenpx $zero $tenpx; /* Låt mittensdelen ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
+  border: $onepx $solid darken(black, 2%); /* Låt mittensdeln ha ram 1px med solid typ och ha färg svart */
+  border-radius: $fiveteenpx; /* Låt mittensdeln ha rundade ram på storlek 15px */
+  overflow: $hid;
+  display: flex;
 }
 
-.left2
-{ 
-	border: $onepx $solid darken(black, 2%);  /* Låt den ha ram 1px med solid typ och ha färg svart */
-	width: $auto; /* Låt den ha bredd automatiskt */
-	height: $auto; /* Låt den ha höjd automatiskt */
-	padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
-	margin-left: $tenpx;  /* Låt den ha margin till vänster 10px */
-	margin-top: $tjugopx; /* Låt den ha margin till uppe 10px */
-}
-%center
-{
-	float: $left; /* Flytta hela delen till vänster */
-	width: 898px; /* Låt den ha bredd 898px */
-	border-left: $onepx $solid darken(black, 2%); /* Låt den ha ram till vänster 1px med solid typ och ha färg svart */
-	border-right: $onepx $solid darken(black, 2%); /* Låt den ha ram till höger 1px med solid typ och ha färg svart */
-	padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
-} 
-.center
-{
-	@extend %center; /* Inkludera centerkoden */
+.left {
+  float: $left; /* Flytta hela delen till vänster */
+  width: 250px; /* Låt hela delen bredden ha 250px */
+  padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
+  height: 400px; /* Låt den ha 400px höjd */
 }
 
-@mixin right 
-{
-	float: $left; /* Flytta höger delen till vänster */
-	width: 300px; /* Låt höger delen ha bredd 300px */
-	padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
+.left2 {
+  border: $onepx $solid darken(black, 2%); /* Låt den ha ram 1px med solid typ och ha färg svart */
+  width: $auto; /* Låt den ha bredd automatiskt */
+  height: $auto; /* Låt den ha höjd automatiskt */
+  padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
+  margin-left: $tenpx; /* Låt den ha margin till vänster 10px */
+  margin-top: $tjugopx; /* Låt den ha margin till uppe 10px */
+}
+%center {
+  float: $left; /* Flytta hela delen till vänster */
+  width: 898px; /* Låt den ha bredd 898px */
+  border-left: $onepx $solid darken(black, 2%); /* Låt den ha ram till vänster 1px med solid typ och ha färg svart */
+  border-right: $onepx $solid darken(black, 2%); /* Låt den ha ram till höger 1px med solid typ och ha färg svart */
+  padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
+}
+.center {
+  @extend %center; /* Inkludera centerkoden */
 }
 
-.right
-{
-	@include right; /* Inkludera högerkoden */
+@mixin right {
+  float: $left; /* Flytta höger delen till vänster */
+  width: 300px; /* Låt höger delen ha bredd 300px */
+  padding: $tenpx; /* Låt den ha avstånd mellan ramar 10px */
 }
-.footer
-{
-	text-align: $cntr; /* Centrera texten i sidfoten */
-	font-size: 16px; /* Låt sidfoten ha textstorlek 16px */
-	margin: $tenpx;  /* Låt den ha 10px margin från alla sidor */
+
+.right {
+  @include right; /* Inkludera högerkoden */
+}
+.footer {
+  text-align: $cntr; /* Centrera texten i sidfoten */
+  font-size: 16px; /* Låt sidfoten ha textstorlek 16px */
+  margin: $tenpx; /* Låt den ha 10px margin från alla sidor */
 }
 /* Om bredden är true gör responvitet */
 @mixin svar($width: true) {
-	@if $width == true 
-{
-@media only screen and (max-width: 1400px)
-{
+  @if $width == true {
+    @media only screen and (max-width: 1400px) {
+      #container {
+        width: $hundredpr; /* Låt ha den bredd 100% */
+        margin: $zero; /* Låt den ha 0px margin från alla sidor */
+        font-size: 16px; /* Låt den ha textstorlek 16px */
+      }
+      #specform1 input[type="text"] {
+        width: 200px; /* Låt textfälten ha bredd 200px */
+      }
+      #speccenter {
+        margin-left: $onepx; /* Låt den ha margin till vänster 1px */
+      }
+      #specform2 input[type="text"] {
+        width: $threehundred; /* Låt textfälten ha bredd 300px */
+      }
+      #specform22 input[type="text"] {
+        width: 200px; /* Låt textfälten ha bredd 200px */
+      }
 
-	#container
-	{
-		width: $hundredpr; /* Låt ha den bredd 100% */
-		margin: $zero; /* Låt den ha 0px margin från alla sidor */
-		font-size: 16px; /* Låt den ha textstorlek 16px */
-	}
-	#specform1 input[type="text"]
-	{	
-		width: 200px; /* Låt textfälten ha bredd 200px */
-	}
-	#speccenter 
-	{	
-		margin-left: $onepx; /* Låt den ha margin till vänster 1px */
-	}
-	#specform2 input[type="text"]
-	{	
-		width: $threehundred; /* Låt textfälten ha bredd 300px */
-	}
-	#specform22 input[type="text"]
-	{	
-		width: 200px; /* Låt textfälten ha bredd 200px */
-	}
-	
-	#spech11
-	{
-		margin-right: $fivepr; /* Låt den ha 5% margin till höger */
-	}
-	#spech1
-	{
-		margin-right: 30%; /* Låt den ha 30% margin till höger */
-	}
-	.pagelink
-	{
-		font-size: $tjugopx; /* Låt den ha textstorlek 20px */
-		margin-left: 20%; /* Låt den ha 20% margin till vänster */
-	}
-	.studylink
-	{
-		margin-left: $fivepr; /* Låt den ha 5% margin till vänster */
-		font-size: $tjugopx; /* Låt den ha textstorlek 20px */
-	}
-	body
-	{
-		font-size: $hundredpr; /* Låt hela hemsidan ha 100% textstorlek */
-	}
+      #spech11 {
+        margin-right: $fivepr; /* Låt den ha 5% margin till höger */
+      }
+      #spech1 {
+        margin-right: 30%; /* Låt den ha 30% margin till höger */
+      }
+      .pagelink {
+        font-size: $tjugopx; /* Låt den ha textstorlek 20px */
+        margin-left: 20%; /* Låt den ha 20% margin till vänster */
+      }
+      .studylink {
+        margin-left: $fivepr; /* Låt den ha 5% margin till vänster */
+        font-size: $tjugopx; /* Låt den ha textstorlek 20px */
+      }
+      body {
+        font-size: $hundredpr; /* Låt hela hemsidan ha 100% textstorlek */
+      }
 
-	.finderror
-	{
-		position: $relativepos; 
-		right: $hundredpx; /* Flytta den till höger 100px */
-		white-space: nowrap; /* Låt inte den sträcka texten. Låt hela texten sträckas bara i en enskild och samma rad. */
-		font-size: 13px; /* Låt den ha 13px textstorlek */
-	}
+      .finderror {
+        position: $relativepos;
+        right: $hundredpx; /* Flytta den till höger 100px */
+        white-space: nowrap; /* Låt inte den sträcka texten. Låt hela texten sträckas bara i en enskild och samma rad. */
+        font-size: 13px; /* Låt den ha 13px textstorlek */
+      }
 
-	.green
-	{
-		margin-left: -60px; /* Låt den ha 60px margin till höger */
-	}
+      .green {
+        margin-left: -60px; /* Låt den ha 60px margin till höger */
+      }
 
-	.myfrm
-	{
-		margin-left: $miunshundredpx; /* Låt den ha 100px margin till höger */
-		padding: $tjugopx; /* Låt den ha avstånd mellan ramar 20px */
-	}
+      .myfrm {
+        margin-left: $miunshundredpx; /* Låt den ha 100px margin till höger */
+        padding: $tjugopx; /* Låt den ha avstånd mellan ramar 20px */
+      }
 
-	.myfrm2
-	{
-		position: $relativepos;
-		right: $tjugopx; /* Flytta den till höger 20px */
-		width: $hundredpr; /* Låt den ha bredd 100% */
-		
-	}
+      .myfrm2 {
+        position: $relativepos;
+        right: $tjugopx; /* Flytta den till höger 20px */
+        width: $hundredpr; /* Låt den ha bredd 100% */
+      }
 
-	h3
-	{
-		margin-left: 70px; /* Låt den ha 70px margin till vänster */
-	}
+      h3 {
+        margin-left: 70px; /* Låt den ha 70px margin till vänster */
+      }
 
-	img
-	{
-		width: $hundredpr; /* Låt alla bilder ha bredd 100% */
-	}
+      img {
+        width: $hundredpr; /* Låt alla bilder ha bredd 100% */
+      }
 
-	hr
-	{
-		width: $ninefivepr; /* Låt alla hr ha bredd 95% */
-	}
+      hr {
+        width: $ninefivepr; /* Låt alla hr ha bredd 95% */
+      }
 
-	.logobox
-	{
-		background-repeat: no-repeat; /* Reptera inte logobakgrunden */
-		background-size: contain; /* Skala hela bilden så att den blir synlig i hela skärmen */
-		background-position: $cntr; /* Centrera logobakgrunden */
-		margin: $zero $tenpx $zero $tenpx; /* Låt logobilden ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
-	}
+      .logobox {
+        background-repeat: no-repeat; /* Reptera inte logobakgrunden */
+        background-size: contain; /* Skala hela bilden så att den blir synlig i hela skärmen */
+        background-position: $cntr; /* Centrera logobakgrunden */
+        margin: $zero $tenpx $zero $tenpx; /* Låt logobilden ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
+      }
 
-	.left
-	{
-		width: 28%; /* Låt vänsterdelen ha bredd 28% */
-	}
-	
+      .left {
+        width: 28%; /* Låt vänsterdelen ha bredd 28% */
+      }
 
-	.left2
-	{
-		width: $ninefivepr; /* Låt den ha bredd 95% */
-	}
+      .left2 {
+        width: $ninefivepr; /* Låt den ha bredd 95% */
+      }
 
-	h1
-	{
-		font-size: $hundredpr; /* Låt alla h1 ha 100% textstorlek */
-	}
-	
-	.right
-	{
-		width: $femtiopr;  /* Låt högerdelen ha bredd 50% */
-	}
-	.meny
-	{
-		margin: $zero $tenpx $zero $tenpx; /* Låt länkmeny ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
-		border: $onepx $solid darken(black, 2%); /* Låt den ha ram 1px med solid typ och ha färg svart */
-		border-radius: $fiveteenpx; /* Låt ramarna vara rundade på storlek 15px */
-		margin-bottom: $tenpx;  /* Låt länkmeny ha 10px margin till uppe */
-		text-align: $cntr; /* Centrera länkmeny */
+      h1 {
+        font-size: $hundredpr; /* Låt alla h1 ha 100% textstorlek */
+      }
 
+      .right {
+        width: $femtiopr; /* Låt högerdelen ha bredd 50% */
+      }
+      .meny {
+        margin: $zero $tenpx $zero $tenpx; /* Låt länkmeny ha margin till uppe 0px, till höger 10px, till nere 0px och till vänster 10px  */
+        border: $onepx $solid darken(black, 2%); /* Låt den ha ram 1px med solid typ och ha färg svart */
+        border-radius: $fiveteenpx; /* Låt ramarna vara rundade på storlek 15px */
+        margin-bottom: $tenpx; /* Låt länkmeny ha 10px margin till uppe */
+        text-align: $cntr; /* Centrera länkmeny */
+      }
 
+      .meny {
+        a {
+          display: $inlineblock;
+          padding: $tenpx; /* Låt länkar i länkmeny ha avstånd mellan ramar 10px */
+          border-right: $onepx $solid darken(#000000, 2%); /* Låt den ha ram till höger 1px med solid typ och ha färg svart */
+        }
+      }
+      .meny a:nth-child(3) {
+        border: $empty; /* Ta bort ramar för tredje länk i länkmey */
+        padding-right: $fyrtiopx; /* Låt tredje länk i länkmey ha avstånd mellan ramar till höger 40px */
+      }
 
-	}
-
-	
-	.meny
-	{ 
-		a
-		{
-			display: $inlineblock; 
-			padding: $tenpx; /* Låt länkar i länkmeny ha avstånd mellan ramar 10px */
-			border-right: $onepx $solid darken(#000000, 2%); /* Låt den ha ram till höger 1px med solid typ och ha färg svart */
-		
-		}
-	}
-	.meny a:nth-child(3)
-	{
-		border: $empty; /* Ta bort ramar för tredje länk i länkmey */
-		padding-right: $fyrtiopx; /* Låt tredje länk i länkmey ha avstånd mellan ramar till höger 40px */
-	}
-
-	.center
-	{
-		width: $femtiopr; /* Låt den ha bredden 50% */
-	}
-
+      .center {
+        width: $femtiopr; /* Låt den ha bredden 50% */
+      }
+    }
+  }
 }
-}
-}
-@include svar($width: true) /* Inkludera svarkoden */
+@include svar($width: true); /* Inkludera svarkoden */
