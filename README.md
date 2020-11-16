@@ -5,24 +5,29 @@ Den här hemsidan består av dessa länkar: Startsida, Kontakta oss och Logga in
 Här kan man lägga till, redigera, radera dessa json data.<br />
 
 **Mappstruktur**<br />
-src/css/main.css<br />
-src/Images/Logo.jpg<br />
-src/includes/config.php<br />
-src/includes/header.php<br />
-src/includes/footer.php<br />
-src/includes/classes/admin.class.php<br />
-src/js/functions.js<br />
-src/SASS/main.scss<br />
-src/add.php<br />
-src/change.php<br />
-src/contact.php<br />
-src/index.php<br />
-src/login.php<br />
-src/logout.php<br />
-pub/Images/Logo.jpg<br />
-pub/js/functions.js<br />
-pub/css/main.css<br />
-pub/index.html
+css/ <br />
+css/main.css<br />
+css/main.min.css<br />
+css/main.scss<br />
+Images/ <br />
+Images/Logo.jpg<br />
+includes/
+includes/config.php<br />
+includes/header.php<br />
+includes/footer.php<br />
+includes/classes/ <br />
+includes/classes/admin.class.php <br />
+js/ <br />
+js/functions.js <br />
+js/functions.dev.js <br />
+js/functions.prod.js <br />
+.gitignore <br />
+add.php <br />
+change.php <br />
+contact.php <br />
+index.php <br />
+login.php <br />
+logout.php <br />
 
 # Installation<br />
 
@@ -30,8 +35,8 @@ Du behöver först ladda ner dessa filer och tillämpa inställningar för datab
 https://github.com/fadihanna123/Projekt_data<br />
 <br />
 Du behöver också ändra SQL uppgifter från din localhost till din egen i dessa filer:<br />
-admin.class.php rad 8.<br />
-change.php rad 33, 80, 126 och 171.<br />
+admin.class.php rad 9.<br />
+change.php rad 31, 95, 145 och 197.<br />
 
 # Programmeringsspråk:
 

@@ -1,13 +1,13 @@
 <?php
-// Starta session
-session_start(); ?>
-<?php $title = "Startsida"; ?>
-<!-- Importera sidhuvud -->
-<?php require "includes/header.php"; ?>
-<?php
-// Importera klassen Admin och anropa den
-require "includes/config.php";
-$anrop = new Admin();
+
+	// Starta session
+	session_start(); 
+	$title = "Startsida";
+	// Importera sidhuvud
+	require "includes/header.php"; 
+	// Importera klassen Admin och anropa den
+	require "includes/config.php";
+
 ?>
 <!-- Definera mittsdelen -->
 <div class="main">
@@ -62,4 +62,8 @@ $anrop = new Admin();
 
 <hr />
 <!-- Definera sidfoten och inkludera den -->
-<?php require "includes/footer.php"; ?>
+<?php 
+
+	require "includes/footer.php";
+
+?>

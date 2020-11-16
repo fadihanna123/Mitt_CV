@@ -1,4 +1,5 @@
 <?php
+
 class Admin
 {
     protected $db;
@@ -16,9 +17,11 @@ class Admin
         $sql = "INSERT INTO contact_cv (fullname, epost, msg) VALUES('$name', '$epost', '$msg');";
         return ($result = $this->db->query($sql)) or
             die(
-                "<span class='error'>Det finns ett okänt problem - Vi försöker lösa problemet så fort det går.</span>"
+                "<span class='error'>Det finns ett okänt problem -<br />
+                Vi försöker lösa problemet så fort det går.</span>"
             );
     }
+
     // login funktionen kontrollerar om man har rätt inloggningsuppgifter precis som finns i databasen.
     public function login($epost, $psw)
     {
@@ -30,7 +33,7 @@ class Admin
             $_SESSION['loginpsw'] = $_POST['logpsw'];
             header("location:index.php");
         } else {
-            echo "<span class='finderror' style='color: red; margin-left: 35%;'>Det finns något fel i uppgifterna. Kontrollera din e-postadress och ditt lösenord</span>";
+            echo "<br /><span class='error'>Det finns något fel i uppgifterna.<br /> Kontrollera din e-postadress och ditt lösenord</span><br />";
         }
     }
 }

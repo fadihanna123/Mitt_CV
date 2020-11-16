@@ -1,7 +1,7 @@
 "use strict";
 
 // show visar alla data i startsida beror på detskickade tabellnamn.
-const show = (tabell) => {
+var show = (tabell) => {
   if ((tabell = "cv_pres")) {
     // Om tabellnamn är cv_pres
     fetch("http://localhost/Projekt_data/index.php/" + tabell)
@@ -69,13 +69,15 @@ const show = (tabell) => {
     fetch("http://localhost/Projekt_data/index.php/" + tabell)
       .then((res) => res.json())
       .then((data) => {
-        let output = "";
-
+        let output = ``;
         data.forEach((post) => {
-          output += `<span class='bold'>Webbsidatitel: </span>${post.webpage_title} <br />
-   				<span class='bold'>Adress: </span><a href='
-        		${post.webpage_url}'>${post.webpage_title}</a> <br /><span class='bold'>Beskrivning: </span>${post.webpage_des} <br />
-        		<a href='change.php?tabell=cv_webpages&id=${post.id}'>Redigera denna del</a><br /><br /><br />`;
+          output +=
+            `<span class='bold'>Webbsidatitel:</span> <span>${post.webpage_title}</span>
+            <br />
+             <span class='bold'>Adress: </span>
+             <a href='` +
+            (`${post.webpage_url}` ? `${post.webpage_url}` : "#") +
+            `'>${post.webpage_title}</a> <br /><span class='bold'>Beskrivning: </span>${post.webpage_des} <br /> <a href='change.php?tabell=cv_webpages&id=${post.id}'>Redigera denna del</a><br /><br /><br />`;
         });
         document.getElementById("here4").innerHTML =
           output +

@@ -1,0 +1,373 @@
+// Styles
+// Variables
+$zero: 0;
+$hundred: 100%;
+$box: border-box;
+$none: none;
+$auto: auto;
+$grid: grid;
+$onefr: 1fr;
+$cntr: center;
+$tenpx: 10px;
+$darkblueclr: darkblue;
+$whiteclr: white;
+$flex: flex;
+$redclr: red;
+$block: block;
+$onerem: 1rem;
+$fourhundred: 400;
+$onepx: 1px;
+$solidbrd: solid;
+$easy: ease-in-out;
+$twentypx: 20px;
+$fortypx: 40px;
+$eighteenpx: 18px;
+$left: left;
+$font: Cambria, Georgia;
+$hid: hidden;
+$media: 1900px;
+$inlineblock: inline-block;
+$sevenhundred: 700;
+$fifteenpx: 15px;
+$three: 3;
+
+// Global settings
+* {
+  margin: $zero;
+  padding: $zero;
+  font-size: $hundred;
+  list-style: $none;
+  outline: $zero;
+  box-sizing: $box;
+}
+
+body {
+  margin: $zero;
+  font-size: $hundred;
+  background-color: #f7fdee;
+}
+
+img {
+  width: $hundred;
+  max-width: $hundred;
+  height: $auto;
+}
+
+a {
+  text-decoration: $none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+textarea {
+  display: $block;
+  margin-bottom: $tenpx;
+  width: $hundred;
+  padding: 0.375rem 0.75rem;
+  font-size: $onerem;
+  font-weight: $fourhundred;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: $onepx $solidbrd #ced4da;
+  -webkit-appearance: $none;
+  -moz-appearance: $none;
+  appearance: $none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s $easy, box-shadow 0.15s $easy;
+}
+
+input:focus,
+textarea:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: $zero;
+  box-shadow: $zero $zero $zero 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+h1 {
+  text-align: $cntr;
+  font-style: italic;
+}
+
+#container {
+  font-family: $font;
+  font-size: 17px;
+  margin: $zero $auto;
+  overflow: $hid;
+}
+
+div .green {
+  color: #007600;
+  text-align: center;
+}
+
+.error {
+  color: #f50000;
+  text-align: center;
+}
+
+// Header
+
+.header {
+  background: #caf288;
+  height: $hundred;
+  margin: $tenpx;
+  display: $grid;
+  grid-template-columns: 70% $hundred;
+}
+
+#logobild {
+  width: 240px;
+  height: 80px;
+  margin: $tenpx;
+  border-radius: $tenpx;
+}
+
+.meny a {
+  display: $inlineblock;
+  font-size: $eighteenpx;
+  text-decoration: $none;
+  color: #f50000;
+  padding: $fortypx;
+  font-weight: $sevenhundred;
+}
+
+// Main
+.main {
+  margin: $zero $tenpx $zero $tenpx;
+  border: $onepx $solidbrd #000;
+  border-radius: $fifteenpx;
+  overflow: $hid;
+  display: $grid;
+  grid-template-columns: repeat($three, $onefr);
+}
+
+.left {
+  padding: $tenpx;
+  height: $fourhundred;
+}
+
+.left2 {
+  border: $onepx $solidbrd #000;
+  width: $auto;
+  height: $auto;
+  padding: $tenpx;
+  margin-left: $tenpx;
+  margin-top: $twentypx;
+  display: $grid;
+  grid-template-columns: $onefr;
+  margin: $tenpx $tenpx $zero $tenpx;
+}
+
+.center {
+  border-left: $onepx $solidbrd #000;
+  border-right: $onepx $solidbrd #000;
+  padding: $tenpx;
+}
+
+.right {
+  padding: $tenpx;
+}
+
+.right2 {
+  float: $left;
+  width: 300px;
+  padding: $tenpx;
+}
+
+.contactmain {
+  display: $grid;
+  grid-template-columns: $onefr;
+  align-items: $cntr;
+  justify-items: $cntr;
+}
+
+.contactmain h3,
+p {
+  text-align: $cntr;
+  margin: $tenpx;
+}
+
+.contactbtn {
+  padding: $tenpx;
+  background: $darkblueclr;
+  color: $whiteclr;
+  display: $flex;
+  margin: $zero $auto;
+}
+
+.dangerbtn {
+  background: $redclr;
+  padding: $tenpx;
+  color: $whiteclr;
+  display: $flex;
+  margin: $zero $auto;
+}
+
+.loginmain {
+  display: $grid;
+  grid-template-columns: $onefr;
+  align-items: $cntr;
+  justify-items: $cntr;
+}
+
+.loginmain h3,
+p {
+  text-align: $cntr;
+  margin: $tenpx;
+}
+
+.loginbtn {
+  padding: $tenpx;
+  background: $darkblueclr;
+  color: $whiteclr;
+  display: $flex;
+  margin: $zero $auto;
+}
+
+.changemain {
+  display: $grid;
+  grid-template-columns: $onefr;
+  align-items: $cntr;
+  justify-items: $cntr;
+}
+
+.changemain h1,
+p {
+  text-align: $cntr;
+  margin: $tenpx;
+}
+
+.addmain {
+  display: $grid;
+  grid-template-columns: $onefr;
+  align-items: $cntr;
+  justify-items: $cntr;
+}
+
+.addmain h1,
+p {
+  text-align: $cntr;
+  margin: $tenpx;
+}
+
+.btn {
+  padding: $tenpx;
+  background: $darkblueclr;
+  color: $whiteclr;
+  display: $flex;
+  margin: $zero $auto;
+}
+
+.row {
+  display: $grid;
+  grid-template-columns: 55% 70%;
+}
+
+.btnrow {
+  display: $grid;
+  grid-template-columns: 50% 30%;
+}
+
+.studylink {
+  margin-left: 38%;
+  font-size: $twentypx;
+}
+
+.pagelink {
+  margin-left: $fortypx;
+  font-size: $twentypx;
+}
+
+.centerit {
+  margin-left: 10%;
+  font-size: $eighteenpx;
+}
+
+// Footer
+.footer {
+  text-align: $cntr;
+  font-size: 16px;
+  margin: $tenpx;
+}
+
+// Styles for mobile
+
+@media screen and (max-width: 1900px) {
+  body {
+    font-size: $hundred;
+    width: $hundred;
+    margin: $zero;
+    padding: $zero;
+  }
+
+  hr {
+    width: 95%;
+    margin: $tenpx;
+  }
+
+  #container {
+    width: $hundred;
+    margin: $zero;
+  }
+
+  .header {
+    grid-template-columns: $onefr;
+  }
+
+  #logobild {
+    width: 95%;
+  }
+
+  .meny {
+    margin: $zero $tenpx $zero $tenpx;
+    border: $onepx $solidbrd #000;
+    border-radius: $fifteenpx;
+    margin-bottom: $tenpx;
+    text-align: $cntr;
+  }
+
+  .meny a {
+    display: $inlineblock;
+    padding: $tenpx;
+    border-right: $onepx $solidbrd #000;
+  }
+
+  .meny a:nth-child(3) {
+    border: $none;
+    padding-right: $fortypx;
+  }
+
+  .main {
+    grid-template-columns: $onefr;
+  }
+
+  .left,
+  .center,
+  .right,
+  .left2 {
+    border: $onepx $solidbrd black;
+  }
+
+  .pagelink {
+    font-size: $twentypx;
+    margin-left: 20%;
+  }
+
+  .studylink {
+    margin-left: 5%;
+    font-size: $twentypx;
+  }
+
+  .contactmain,
+  .row,
+  .changemain {
+    grid-template-columns: $onefr;
+    text-align: $cntr;
+  }
+}
