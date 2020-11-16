@@ -32,7 +32,7 @@ README.md
 
 # Installation<br />
 
-Du behöver först ladda ner ovanstående filer och tillämpa inställningar för databasen som finns i:<br />
+Du behöver först klona denna repo och tillämpa inställningar för databasen som finns i:<br />
 https://github.com/fadihanna123/Projekt_data<br />
 <br />
 Du behöver också ändra SQL uppgifter från din localhost till din egen i dessa filer:<br />
