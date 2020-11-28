@@ -38,6 +38,7 @@ $three: 3;
   font-size: $hundred;
   list-style: $none;
   outline: $zero;
+  -webkit-box-sizing: $box;
   box-sizing: $box;
 }
 
@@ -54,6 +55,7 @@ img {
 }
 
 a {
+  -webkit-text-decoration: $none;
   text-decoration: $none;
 }
 
@@ -77,7 +79,14 @@ textarea {
   -moz-appearance: $none;
   appearance: $none;
   border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s $easy, -webkit-box-shadow 0.15s $easy;
+  transition: border-color 0.15s $easy, -webkit-box-shadow 0.15s $easy;
+  -o-transition: border-color 0.15s $easy, box-shadow 0.15s $easy;
   transition: border-color 0.15s $easy, box-shadow 0.15s $easy;
+  transition: border-color 0.15s $easy, box-shadow 0.15s $easy,
+    -webkit-box-shadow 0.15s $easy;
+  transition: border-color 0.15s $easy, box-shadow 0.15s $easy,
+    -webkit-box-shadow 0.15s $easy;
 }
 
 input:focus,
@@ -86,6 +95,7 @@ textarea:focus {
   background-color: #fff;
   border-color: #86b7fe;
   outline: $zero;
+  -webkit-box-shadow: $zero $zero $zero 0.25rem rgba(13, 110, 253, 0.25);
   box-shadow: $zero $zero $zero 0.25rem rgba(13, 110, 253, 0.25);
 }
 
@@ -131,6 +141,7 @@ div .green {
 .meny a {
   display: $inlineblock;
   font-size: $eighteenpx;
+  -webkit-text-decoration: $none;
   text-decoration: $none;
   color: #f50000;
   padding: $fortypx;
@@ -183,6 +194,8 @@ div .green {
 .contactmain {
   display: $grid;
   grid-template-columns: $onefr;
+  -webkit-box-align: $cntr;
+  -ms-flex-align: $cntr;
   align-items: $cntr;
   justify-items: $cntr;
 }
@@ -212,6 +225,8 @@ p {
 .loginmain {
   display: $grid;
   grid-template-columns: $onefr;
+  -webkit-box-align: $cntr;
+  -ms-flex-align: $cntr;
   align-items: $cntr;
   justify-items: $cntr;
 }
@@ -233,6 +248,8 @@ p {
 .changemain {
   display: $grid;
   grid-template-columns: $onefr;
+  -webkit-box-align: $cntr;
+  -ms-flex-align: $cntr;
   align-items: $cntr;
   justify-items: $cntr;
 }
@@ -246,6 +263,8 @@ p {
 .addmain {
   display: $grid;
   grid-template-columns: $onefr;
+  -webkit-box-align: $cntr;
+  -ms-flex-align: $cntr;
   align-items: $cntr;
   justify-items: $cntr;
 }
