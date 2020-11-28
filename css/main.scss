@@ -87,6 +87,8 @@ textarea {
     -webkit-box-shadow 0.15s $easy;
   transition: border-color 0.15s $easy, box-shadow 0.15s $easy,
     -webkit-box-shadow 0.15s $easy;
+  transition: border-color 0.15s $easy, box-shadow 0.15s $easy,
+    -webkit-box-shadow 0.15s $easy;
 }
 
 input:focus,
