@@ -26,20 +26,20 @@
 			<div class="meny">
 					<a href="index.php">Startsida</a>
 					<a href="contact.php">Kontakta oss</a>
-					<?php 
+					<?php
 
-					if (isset($_SESSION['loginepost']) && isset($_SESSION['loginpsw'])) {
-						// Om det finns session(inloggad) visa då logga ut
-						echo "<a href='logout.php'>Logga ut</a>";
-					}
-					// Slut om det finns session(inloggad) då visa logga ut
-					else {
-						// Om det inte finns session(inloggad) visa då logga in
-						echo "<a href='login.php'>Logga in</a>";
-					}
-					// Slut om det inte finns session(inloggad) visa då logga in
-					
-					?>
+                    if (isset($_SESSION['loginepost']) && isset($_SESSION['loginpsw'])) {
+                        // Om det finns session(inloggad) visa då logga ut
+                        echo "<a href='logout.php'>Logga ut</a>";
+                    }
+                    // Slut om det finns session(inloggad) då visa logga ut
+                    else {
+                        // Om det inte finns session(inloggad) visa då logga in
+                        echo "<a href='login.php'>Logga in</a>";
+                    }
+                    // Slut om det inte finns session(inloggad) visa då logga in
+                    
+                    ?>
 			</div>
 
 		</div>

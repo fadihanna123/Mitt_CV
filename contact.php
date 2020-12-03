@@ -1,11 +1,11 @@
 <?php
-	
-	// Starta session
-	session_start(); 
-	$title = "Kontakta oss";
-	// Importera sidhuvud
-	require "includes/header.php"; 
-	require "includes/config.php"; 
+    
+    // Starta session
+    session_start();
+    $title = "Kontakta oss";
+    // Importera sidhuvud
+    require "includes/header.php";
+    require "includes/config.php";
 
 ?>
 <!-- Definera mittsdelen -->
@@ -46,30 +46,30 @@
 
 						<input type="submit" class="contactbtn" name="contactbtn" value="Skicka" />
 				</form>
-			<?php 
+			<?php
 
-					if (isset($_POST['contactbtn'])) {
-						// Om man tryckte på skicka knappen
-						if (
-							isset($_POST['fullname']) &&
-							isset($_POST['epost']) &&
-							isset($_POST['msg'])
-						) {
-							// Om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-							// Anropa kontaktsfunktionen
-							$anrop->Contact($_POST['fullname'], $_POST['epost'], $_POST['msg']);
-							// Visa bekräftelsesmeddelande
-							echo "<div class='green'>Meddelande har skickats</div>";
-						}
-						// Slut om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-						else {
-							// Om det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-							echo "<br /><span class='error'>Du behöver fylla in alla nödvändiga fält.</span><br />";
-						} // Slut det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
-					}
-					// Slut om man tryckte på skicka knappen
+                    if (isset($_POST['contactbtn'])) {
+                        // Om man tryckte på skicka knappen
+                        if (
+                            isset($_POST['fullname']) &&
+                            isset($_POST['epost']) &&
+                            isset($_POST['msg'])
+                        ) {
+                            // Om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+                            // Anropa kontaktsfunktionen
+                            $anrop->Contact($_POST['fullname'], $_POST['epost'], $_POST['msg']);
+                            // Visa bekräftelsesmeddelande
+                            echo "<div class='green'>Meddelande har skickats</div>";
+                        }
+                        // Slut om det finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+                        else {
+                            // Om det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+                            echo "<br /><span class='error'>Du behöver fylla in alla nödvändiga fält.</span><br />";
+                        } // Slut det inte finns värde i dessa textfält: fullständigt namn, e-postadress och meddelande.
+                    }
+                    // Slut om man tryckte på skicka knappen
 
-			?>
+            ?>
 	</div>
 	
 </div>

@@ -1,19 +1,18 @@
 <?php
 
-	// Starta session
-	session_start(); 
-	$title = "Lägg till data";
-	// Importera sidhuvud
-	require "includes/header.php";
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";	
+    // Starta session
+    session_start();
+    $title = "Lägg till data";
+    // Importera sidhuvud
+    require "includes/header.php";
+    // Importera klassen Admin och anropa den
+    require "includes/config.php";
 
-	if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) 
-	{
-		// Om det inte finns session då visa felmeddelande om inloggning
-		echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
-	}
-	// Slut om det inte finns session då visa felmeddelande om inloggning
+    if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
+        // Om det inte finns session då visa felmeddelande om inloggning
+        echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
+    }
+    // Slut om det inte finns session då visa felmeddelande om inloggning
 
 ?>
 <!-- Definera mittsdelen -->
@@ -24,10 +23,9 @@
 		<h1>Lägga till data</h1>
 		<p>Här kan du lägga till nya data.</p>
 		<?php
-			if ($_GET['tabell'] == "cv_studie") 
-			{
-				// Om det skickade tabellnamn i adressraden är cv_studie
-				echo "<form>
+            if ($_GET['tabell'] == "cv_studie") {
+                // Om det skickade tabellnamn i adressraden är cv_studie
+                echo "<form>
 						<div class='row'>
 							<div class='labelcol'>
 								<label class='bold' for='addstudiesschool'>Lärosäte: </label>
@@ -66,10 +64,10 @@
 
 						
 					</form><br />";
-			} // Slut om det skickade tabellnamn i adressraden är cv_studie
-			if ($_GET['tabell'] == "cv_work") {
-				// Om det skickade tabellnamn i adressraden är cv_work
-				echo "<form>
+            } // Slut om det skickade tabellnamn i adressraden är cv_studie
+            if ($_GET['tabell'] == "cv_work") {
+                // Om det skickade tabellnamn i adressraden är cv_work
+                echo "<form>
 						<div class='row'>
 							<div class='labelcol'>
 								<label class='bold' for='addworkplace'>Arbetsställe: </label> 
@@ -110,11 +108,10 @@
 								<input type='button' id='add2' class='btn' value='Lägg till data' name='add2' />
 
 					</form><br />";
-			} // Slut om det skickade tabellnamn i adressraden är cv_studie
-			if ($_GET['tabell'] == "cv_webpages") 
-			{
-				// Om det skickade tabellnamn i adressraden är cv_webpages
-				echo "<form>
+            } // Slut om det skickade tabellnamn i adressraden är cv_studie
+            if ($_GET['tabell'] == "cv_webpages") {
+                // Om det skickade tabellnamn i adressraden är cv_webpages
+                echo "<form>
 						<div class='row'>
 							<div class='labelcol'>
 								<label class='bold' for='addwebpage_title'>Titel: </label> 
@@ -148,11 +145,11 @@
 
 						
 					</form>";
-			}
+            }
 
-			// Slut om det skickade tabellnamn i adressraden är cv_studie
+            // Slut om det skickade tabellnamn i adressraden är cv_studie
 
-		?>
+        ?>
 		<script>
 
 			//  Koden för att lägg till studier 
@@ -263,8 +260,8 @@
 </div>
 <hr />
 	<!-- Definera sidfoten och inkludera den -->
-	<?php 
-	
-		require "includes/footer.php"; 
-	
-	?>
+	<?php
+    
+        require "includes/footer.php";
+    
+    ?>

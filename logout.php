@@ -6,5 +6,3 @@ session_start();
 session_destroy();
 // Skicka sidan till startsidan.
 header("location: index.php");
-
-?>

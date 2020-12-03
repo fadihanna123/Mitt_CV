@@ -1,12 +1,12 @@
 <?php
 
-	// Starta session
-	session_start(); 
-	$title = "Startsida";
-	// Importera sidhuvud
-	require "includes/header.php"; 
-	// Importera klassen Admin och anropa den
-	require "includes/config.php";
+    // Starta session
+    session_start();
+    $title = "Startsida";
+    // Importera sidhuvud
+    require "includes/header.php";
+    // Importera klassen Admin och anropa den
+    require "includes/config.php";
 
 ?>
 <!-- Definera mittsdelen -->
@@ -62,8 +62,8 @@
 
 <hr />
 <!-- Definera sidfoten och inkludera den -->
-<?php 
+<?php
 
-	require "includes/footer.php";
+    require "includes/footer.php";
 
 ?>
