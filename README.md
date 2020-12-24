@@ -22,6 +22,7 @@ js/functions.js <br />
 js/functions.dev.js <br />
 js/functions.prod.js <br />
 .gitignore <br />
+.php_cs.cache <br />
 add.php <br />
 change.php <br />
 contact.php <br />
