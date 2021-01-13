@@ -23,13 +23,16 @@ js/functions.dev.js <br />
 js/functions.prod.js <br />
 .gitignore <br />
 .php_cs.cache <br />
+package.json <br />
+tsconfig.json <br />
+yarn.lock <br />
 add.php <br />
 change.php <br />
 contact.php <br />
 index.php <br />
 login.php <br />
 logout.php <br />
-README.md
+README.md <br />
 
 # Installation<br />
 
