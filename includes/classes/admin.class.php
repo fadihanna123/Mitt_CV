@@ -1,7 +1,8 @@
 <?php
 
 class Admin
-{protected $_db;
+{
+    protected $_db;
     // Definera databasuppgifter
     public function __construct()
     {
