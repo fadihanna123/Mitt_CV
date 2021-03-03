@@ -1,19 +1,19 @@
 <?php
 
-    // Starta session
-    session_start();
-    $title = "Ändra data";
-    // Importera sidhuvud
-    require "includes/header.php";
+// Starta session
+session_start();
+$title = (string) "Ändra data";
+// Importera sidhuvud
+require "includes/header.php";
 
-    // Importera klassen Admin och anropa den
-    require "includes/config.php";
+// Importera klassen Admin och anropa den
+require "includes/config.php";
 
-    if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
-        // Om det inte finns session då visa felmeddelande om inloggning
-        echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
-    }
-    // Slut om det inte finns session då visa felmeddelande om inloggning
+if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
+    // Om det inte finns session då visa felmeddelande om inloggning
+    echo "<script>alert('Du måste vara inloggad först för att kunna redigera eller ändra något. Var vänlig och logga in.'); window.location='login.php';</script>";
+}
+// Slut om det inte finns session då visa felmeddelande om inloggning
 
 ?>
 <!-- Definera mittsdelen -->
@@ -24,15 +24,15 @@
 
 		<?php
 
-            if ($_GET['tabell'] == "cv_pres") {
-                // Om det skickade tabellnamn i adressraden är cv_pres
-                // Ansluta till databasen och importera formulärsdata från databasen
-                $con = mysqli_connect('localhost', 'root', '', 'test');
-                mysqli_set_charset($con, "utf8");
-                $sql = "SELECT * FROM cv_pres";
-                $result = mysqli_query($con, $sql);
-                $fetch = mysqli_fetch_array($result);
-                echo "<form>
+if ($_GET['tabell'] == "cv_pres") {
+    // Om det skickade tabellnamn i adressraden är cv_pres
+    // Ansluta till databasen och importera formulärsdata från databasen
+    $con = (object)mysqli_connect('localhost', 'root', '', 'test');
+    mysqli_set_charset($con, "utf8");
+    $sql = (string) "SELECT * FROM cv_pres";
+    $result = (object)mysqli_query($con, $sql);
+    $fetch = (array)mysqli_fetch_array($result);
+    echo "<form>
 							<div class='row'>
 								<div class='labelcol'>
 									<label for='fullname' class='bold'>Fullständigt namn: </label>
@@ -43,7 +43,7 @@
 							</div>
 							<div class='row'>
 								<div class='labelcol'>
-									<label for='epost' class='bold'>E-postadress:</label> 
+									<label for='epost' class='bold'>E-postadress:</label>
 								</div>
 								<div class='col'>
 									<input type='email' id='epost' placeholder='Email' value='$fetch[epost]' />
@@ -57,16 +57,16 @@
 									<input type='text' id='mobnr' placeholder='Mobilnummer' value='$fetch[mobnr]' />
 								</div>
 							</div>
-								
+
 							<div class='row'>
 								<div class='labelcol'>
-									<label for='age' class='bold'>Ålder:</label> 
+									<label for='age' class='bold'>Ålder:</label>
 								</div>
 								<div class='col'>
 									<input type='text' id='age' placeholder='Age' value='$fetch[age]' />
 								</div>
 							</div>
-						
+
 							<div class='row'>
 								<div class='labelcol'>
 									<label for='age' class='bold'>Språk: </label>
@@ -85,18 +85,18 @@
 							</div>
 									<input type='hidden' id='hid' value='$fetch[id]' />
 									<input type='button' id='change1' class='btn' value='Ändra' name='change1' />
-						
+
 					</form><br />";
-            } // Slut om det skickade tabellnamn i adressraden är cv_pres
-            if ($_GET['tabell'] == "cv_studie") {
-                // Om det skickade tabellnamn i adressraden är cv_studie
-                // Ansluta till databasen och importera formulärsdata från databasen
-                $con = mysqli_connect('localhost', 'root', '', 'test');
-                mysqli_set_charset($con, "utf8");
-                $sql = "SELECT * FROM cv_studie WHERE id=" . $_GET['id'] . ";";
-                $result = mysqli_query($con, $sql);
-                while ($fetch = mysqli_fetch_array($result)) {
-                    echo "<form>
+} // Slut om det skickade tabellnamn i adressraden är cv_pres
+if ($_GET['tabell'] == "cv_studie") {
+    // Om det skickade tabellnamn i adressraden är cv_studie
+    // Ansluta till databasen och importera formulärsdata från databasen
+    $con = (object)mysqli_connect('localhost', 'root', '', 'test');
+    mysqli_set_charset($con, "utf8");
+    $sql = (string) "SELECT * FROM cv_studie WHERE id=" . $_GET['id'] . ";";
+    $result = (object)mysqli_query($con, $sql);
+    while ($fetch = (array)mysqli_fetch_array($result)) {
+        echo "<form>
 							<div class='row'>
 								<div class='labelcol'>
 									<label class='bold' for='studiesschool'>Lärosäte: </label>
@@ -136,17 +136,17 @@
 										<input type='button' class='dangerbtn' id='radera' value='Radera' />
 									</div>
 						</form><br />";
-                }
-            } // Slut om det skickade tabellnamn i adressraden är cv_studie
-            if ($_GET['tabell'] == "cv_work") {
-                // Om det skickade tabellnamn i adressraden är cv_work
-                // Ansluta till databasen och importera formulärsdata från databasen
-                $con = mysqli_connect('localhost', 'root', '', 'test');
-                mysqli_set_charset($con, "utf8");
-                $sql = "SELECT * FROM cv_work WHERE id=" . $_GET['id'] . ";";
-                $result = mysqli_query($con, $sql);
-                while ($fetch = mysqli_fetch_array($result)) {
-                    echo "<form>
+    }
+} // Slut om det skickade tabellnamn i adressraden är cv_studie
+if ($_GET['tabell'] == "cv_work") {
+    // Om det skickade tabellnamn i adressraden är cv_work
+    // Ansluta till databasen och importera formulärsdata från databasen
+    $con = (object)mysqli_connect('localhost', 'root', '', 'test');
+    mysqli_set_charset($con, "utf8");
+    $sql = (string) "SELECT * FROM cv_work WHERE id=" . $_GET['id'] . ";";
+    $result = (object)mysqli_query($con, $sql);
+    while ($fetch = (array)mysqli_fetch_array($result)) {
+        echo "<form>
 						<div class='row'>
 							<div class='labelcol'>
 								<label class='bold' for='workplace'>Arbetsställe: </label>
@@ -186,19 +186,19 @@
 								<input type='button' class='dangerbtn' id='radera2' value='Radera' />
 						</div>
 
-					
+
 					</form><br/>";
-                }
-            } // Slut om det skickade tabellnamn i adressraden är cv_work
-            if ($_GET['tabell'] == "cv_webpages") {
-                // Om det skickade tabellnamn i adressraden är cv_webpages
-                // Ansluta till databasen och importera formulärsdata från databasen
-                $con = mysqli_connect('localhost', 'root', '', 'test');
-                mysqli_set_charset($con, "utf8");
-                $sql = "SELECT * FROM cv_webpages WHERE id=" . $_GET['id'] . ";";
-                $result = mysqli_query($con, $sql);
-                while ($fetch = mysqli_fetch_array($result)) {
-                    echo "<form>
+    }
+} // Slut om det skickade tabellnamn i adressraden är cv_work
+if ($_GET['tabell'] == "cv_webpages") {
+    // Om det skickade tabellnamn i adressraden är cv_webpages
+    // Ansluta till databasen och importera formulärsdata från databasen
+    $con = (object)mysqli_connect('localhost', 'root', '', 'test');
+    mysqli_set_charset($con, "utf8");
+    $sql = (string) "SELECT * FROM cv_webpages WHERE id=" . $_GET['id'] . ";";
+    $result = (object)mysqli_query($con, $sql);
+    while ($fetch = (array)mysqli_fetch_array($result)) {
+        echo "<form>
 							<div class='row'>
 								<div class='labelcol'>
 									<label class='bold' for='webpage_title'>Titel: </label>
@@ -207,7 +207,7 @@
 									<input type='text' id='webpage_title' placeholder='Title' value='$fetch[webpage_title]' />
 								</div>
 							</div>
-							
+
 							<div class='row'>
 								<div class='labelcol'>
 									<label class='bold' for='webpage_url'>Adress:</label>
@@ -231,30 +231,30 @@
 								<input type='button' class='dangerbtn' id='radera3' value='Radera' />
 							</div>
 					</form><br />";
-                }
-            }
+    }
+}
 
-            // Slut om det skickade tabellnamn i adressraden är cv_webpages
+// Slut om det skickade tabellnamn i adressraden är cv_webpages
 
 ?>
 		<!-- Här ska den visas resultat efter ändring -->
 	<div id="here"></div>
 	<script>
-	// Koden för att ändra personliga uppgifter 
-	// Definera knappen ändra personliga uppgifter 
+	// Koden för att ändra personliga uppgifter
+	// Definera knappen ändra personliga uppgifter
 	let change1 = document.getElementById("change1");
 	if(change1 != null)
 	{
 		// Lägger till händelsehantering för knappen
 		change1.addEventListener("click", () => {
 		// Deklarera de önskade data från formulärdata
-        let fullname = document.getElementById("fullname").value; 
-        let epost = document.getElementById("epost").value; 
-        let mobnr = document.getElementById("mobnr").value; 
-        let age = document.getElementById("age").value; 
-        let title = document.getElementById("title").value; 
-        let lang = document.getElementById("lang").value; 
-        let id = document.getElementById("hid").value; 
+        let fullname = document.getElementById("fullname").value;
+        let epost = document.getElementById("epost").value;
+        let mobnr = document.getElementById("mobnr").value;
+        let age = document.getElementById("age").value;
+        let title = document.getElementById("title").value;
+        let lang = document.getElementById("lang").value;
+        let id = document.getElementById("hid").value;
         let json =  {"id": id, "fullname": fullname, "epost": epost, "mobnr": mobnr, "age": age, "lang": lang, "title": title};
         // Starta Ajax förfrågan
         let xmlhttp = new XMLHttpRequest();
@@ -270,16 +270,16 @@
 			// Itrera dessa objektsdata
 			for(let i=0; i < jsonData.length; i++){
 					// Visa ändringsbekräftelse
-					document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";    
+					document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
 			}
-        }  
+        }
   })
 }
 
 
 
-	// Koden för att ändra studieuppgifter 
-	// Definera knappen ändra studieuppgifter 
+	// Koden för att ändra studieuppgifter
+	// Definera knappen ändra studieuppgifter
 	let change2 = document.getElementById("change2");
 	if(change2 != null)
 	{
@@ -306,17 +306,17 @@
 			// Itrera dessa objektsdata.
 			for(let i=0; i < jsonData.length; i++){
 				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";    
+				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
 			}
-		}  
+		}
   })
 
 }
 
 
 
-	// Koden för att ändra erfarenhetersuppgifter 
-	// Definera knappen ändra erfarenhetersuppgifter 
+	// Koden för att ändra erfarenhetersuppgifter
+	// Definera knappen ändra erfarenhetersuppgifter
 	let change3 = document.getElementById("change3");
 	if(change3 != null)
 	{
@@ -343,9 +343,9 @@
 		 	// Itrera dessa objektsdata.
 			for(let i=0; i < jsonData.length; i++){
 				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";    
+				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
 			}
-        }  
+        }
   })
 
 }
@@ -378,9 +378,9 @@
 			// Itrera dessa objektsdata.
 			for(let i=0; i < jsonData.length; i++){
 				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";    
+				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
 			}
-        }  
+        }
   })
 
 }
@@ -393,7 +393,7 @@ let radera = document.getElementById("radera");
 	if(radera != null)
 	{
 		// Lägger till händelsehantering för knappen.
-		radera.addEventListener("click", () =>{ 
+		radera.addEventListener("click", () =>{
 			// Deklarera de önskade data från formulärdata.
 			let id3 = $("#hid3").val();
 			let tabell = $("#raderahid1").val();
@@ -407,7 +407,7 @@ let radera = document.getElementById("radera");
 			xmlhttp.onload = () => {
 				location.href = "index.php";
 			}
-		})	
+		})
 }
 
 
@@ -418,7 +418,7 @@ let radera = document.getElementById("radera");
 	if(radera2 != null)
 	{
 		// Lägger till händelsehantering för knappen.
-    radera2.addEventListener("click", function(){ 
+    radera2.addEventListener("click", function(){
     	// Deklarera de önskade data från formulärdata.
 		let id5 = $("#hid5").val();
 		let tabell = $("#raderahid2").val();
@@ -432,7 +432,7 @@ let radera = document.getElementById("radera");
         xmlhttp.onload = function() {
             location.href = "index.php";
         }
-    })	
+    })
 }
 
 		// Koden för att radera webbssidorsuppgiften.
@@ -455,7 +455,7 @@ let radera = document.getElementById("radera");
         xmlhttp.onload = function() {
             location.href = "index.php";
         }
-    })	
+    })
 }
 
 
