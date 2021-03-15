@@ -19,8 +19,9 @@ includes/classes/ <br />
 includes/classes/admin.class.php <br />
 js/ <br />
 js/functions.js <br />
-js/functions.dev.js <br />
-js/functions.prod.js <br />
+js/functions.min.js <br />
+TS/ <br />
+TS/functions.ts <br />
 .gitignore <br />
 .php_cs.cache <br />
 package.json <br />
