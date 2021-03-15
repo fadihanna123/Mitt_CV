@@ -23,10 +23,6 @@ js/functions.min.js <br />
 TS/ <br />
 TS/functions.ts <br />
 .gitignore <br />
-.php_cs.cache <br />
-package.json <br />
-tsconfig.json <br />
-yarn.lock <br />
 add.php <br />
 change.php <br />
 contact.php <br />
