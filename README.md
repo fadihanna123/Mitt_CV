@@ -42,4 +42,4 @@ change.php rad 31, 95, 145 och 197.<br />
 
 # Programmeringsspråk:
 
-HTML, CSS, Javascript, Typescript, SASS och PHP.
+HTML, CSS, Javascript, Typescript och PHP.
