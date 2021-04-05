@@ -1,0 +1,26 @@
+#{map-get($selectorMap, link)} {
+  -webkit-text-decoration: $none;
+  text-decoration: $none;
+}
+
+#{map-get($selectorMap, studyLink)} {
+  margin-left: $thirtyeightpr;
+  font-size: $twentypx;
+}
+
+#{map-get($selectorMap, pageLink)} {
+  margin-left: $fortypx;
+  font-size: $twentypx;
+}
+
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, pageLink)} {
+    font-size: $twentypx;
+    margin-left: $twentypr;
+  }
+
+  #{map-get($selectorMap, studyLink)} {
+    margin-left: $fivepr;
+    font-size: $twentypx;
+  }
+}

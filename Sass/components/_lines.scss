@@ -1,0 +1,6 @@
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, line)} {
+    width: $ninetyfivepr;
+    margin: $tenpx;
+  }
+}

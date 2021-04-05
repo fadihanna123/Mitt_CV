@@ -1,0 +1,30 @@
+#{map-get($selectorMap, menu)} {
+  a {
+    display: $inlineblock;
+    font-size: $eighteenpx;
+    -webkit-text-decoration: $none;
+    text-decoration: $none;
+    color: #f50000;
+    padding: $fortypx;
+    font-weight: $sevenhundred;
+  }
+}
+
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, menu)} {
+    #{map-get($selectorMap, link)} {
+      display: $inlineblock;
+      padding: $tenpx;
+      border-right: $onepx $solidbrd #000;
+    }
+    margin: $zero $tenpx $zero $tenpx;
+    border: $onepx $solidbrd #000;
+    border-radius: $fifteenpx;
+    margin-bottom: $tenpx;
+    text-align: $cntr;
+    #{map-get($selectorMap, link)} :nth-child(3) {
+      border: $none;
+      padding-right: $fortypx;
+    }
+  }
+}

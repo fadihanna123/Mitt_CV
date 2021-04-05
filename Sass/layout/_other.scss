@@ -1,0 +1,102 @@
+#{map-get($selectorMap, body)} {
+  font-family: $font;
+  margin: $zero;
+  font-size: $hundred;
+  background-color: #f7fdee;
+}
+
+#{map-get($selectorMap, wrapper)} {
+  font-family: $font;
+  font-size: $seventeenpx;
+  margin: $zero $auto;
+  overflow: $hid;
+}
+
+#{map-get($selectorMap, div)} {
+  #{map-get($selectorMap, green)} {
+    color: #007600;
+    text-align: $cntr;
+  }
+}
+
+#{map-get($selectorMap, err)} {
+  color: #f50000;
+  text-align: $cntr;
+}
+
+#{map-get($selectorMap, main)} {
+  margin: $zero $tenpx $zero $tenpx;
+  border: $onepx $solidbrd #000;
+  border-radius: $fifteenpx;
+  overflow: $hid;
+  display: $grid;
+  grid-template-columns: repeat($three, $onefr);
+}
+
+#{map-get($selectorMap, left)} {
+  padding: $tenpx;
+  height: $fourhundred;
+}
+
+#{map-get($selectorMap, left2)} {
+  border: $onepx $solidbrd #000;
+  width: $auto;
+  height: $auto;
+  padding: $tenpx;
+  margin-left: $tenpx;
+  margin-top: $twentypx;
+  display: $grid;
+  grid-template-columns: $onefr;
+  margin: $tenpx $tenpx $zero $tenpx;
+}
+
+#{map-get($selectorMap, center)} {
+  border-left: $onepx $solidbrd #000;
+  border-right: $onepx $solidbrd #000;
+  padding: $tenpx;
+}
+
+#{map-get($selectorMap, right)} {
+  padding: $tenpx;
+}
+
+#{map-get($selectorMap, right2)} {
+  float: $left;
+  width: $threehundredpx;
+  padding: $tenpx;
+}
+
+#{map-get($selectorMap, row)} {
+  display: $grid;
+  grid-template-columns: 55% $seventypr;
+}
+
+#{map-get($selectorMap, centerIt)} {
+  margin-left: $tenpr;
+  font-size: $eighteenpx;
+}
+
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, wrapper)} {
+    width: $hundred;
+    margin: $zero;
+  }
+
+  #{map-get($selectorMap, main)} {
+    grid-template-columns: $onefr;
+  }
+
+  #{map-get($selectorMap, left)},
+  #{map-get($selectorMap, center)},
+  #{map-get($selectorMap, right)},
+  #{map-get($selectorMap, left2)} {
+    border: $onepx $solidbrd $blackclr;
+  }
+
+  #{map-get($selectorMap, contactMain)},
+  #{map-get($selectorMap, row)},
+  #{map-get($selectorMap, changeMain)} {
+    grid-template-columns: $onefr;
+    text-align: $cntr;
+  }
+}

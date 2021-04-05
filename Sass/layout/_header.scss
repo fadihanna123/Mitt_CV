@@ -1,0 +1,24 @@
+#{map-get($selectorMap, header)} {
+  background: #caf288;
+  height: $hundred;
+  margin: $tenpx;
+  display: $grid;
+  grid-template-columns: $seventypr $hundred;
+}
+
+#{map-get($selectorMap, logoBild)} {
+  width: 240px;
+  height: 80px;
+  margin: $tenpx;
+  border-radius: $tenpx;
+}
+
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, header)} {
+    grid-template-columns: $onefr;
+  }
+
+  #{map-get($selectorMap, logoBild)} {
+    width: $ninetyfivepr;
+  }
+}

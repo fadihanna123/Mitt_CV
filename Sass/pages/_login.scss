@@ -1,0 +1,13 @@
+#{map-get($selectorMap, loginMain)} {
+  display: $grid;
+  grid-template-columns: $onefr;
+  -webkit-box-align: $cntr;
+  -ms-flex-align: $cntr;
+  align-items: $cntr;
+  justify-items: $cntr;
+  #{map-get($selectorMap, h3)},
+  #{map-get($selectorMap, para)} {
+    text-align: $cntr;
+    margin: $tenpx;
+  }
+}
