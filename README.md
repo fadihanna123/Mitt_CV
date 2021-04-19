@@ -42,7 +42,7 @@ includes/footer.php<br />
 config/ <br />
 config/config.php <br />
 lib/ <br />
-lib/classes/admin.class.php <br />
+lib/admin.class.php <br />
 js/ <br />
 js/functions.js <br />
 js/functions.min.js <br />
