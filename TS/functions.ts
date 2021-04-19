@@ -1,39 +1,8 @@
 "use strict";
-
-interface Pres {
-  id: number;
-  fullname: string;
-  age: number;
-  lang: string;
-  title: string;
-  mobnr: string;
-}
-
-interface Studie {
-  id: number;
-  course_name: string;
-  studiesschool: string;
-  Starttime_studies: string;
-  Stoptime_studies: string;
-}
-
-interface Work {
-  id: number;
-  work_title: string;
-  workplace: string;
-  Starttime_work: string;
-  Stoptime_work: string;
-}
-
-interface Webpages {
-  id: number;
-  webpage_url: string;
-  webpage_title: string;
-  webpage_des: string;
-}
+import { Pres, Studie, Work, Webpages } from "./typings/";
 
 // show visar alla data i startsida beror på detskickade tabellnamn.
-var show = (tabell: string) => {
+const show = (tabell: string) => {
   if ((tabell = "cv_pres")) {
     // Om tabellnamn är cv_pres
     fetch("http://localhost/Projekt_data/index.php/" + tabell)

@@ -1,4 +1,5 @@
 "use strict";
+exports.__esModule = true;
 // show visar alla data i startsida beror på detskickade tabellnamn.
 var show = function (tabell) {
     if ((tabell = "cv_pres")) {

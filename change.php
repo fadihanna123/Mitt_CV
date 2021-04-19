@@ -7,7 +7,7 @@ $title = (string) "Ändra data";
 require "includes/header.php";
 
 // Importera klassen Admin och anropa den
-require "includes/config.php";
+require "config/config.php";
 
 if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
     // Om det inte finns session då visa felmeddelande om inloggning
@@ -18,11 +18,11 @@ if (!isset($_SESSION['loginepost']) && !isset($_SESSION['loginpsw'])) {
 ?>
 <!-- Definera mittsdelen -->
 <div class="changemain">
-		<!-- Lägg till rubriken ändra data -->
-		<h1>Ändra data</h1>
-		<p >Här kan du ändra data.</p>
+    <!-- Lägg till rubriken ändra data -->
+    <h1>Ändra data</h1>
+    <p>Här kan du ändra data.</p>
 
-		<?php
+    <?php
 
 if ($_GET['tabell'] == "cv_pres") {
     // Om det skickade tabellnamn i adressraden är cv_pres
@@ -237,231 +237,251 @@ if ($_GET['tabell'] == "cv_webpages") {
 // Slut om det skickade tabellnamn i adressraden är cv_webpages
 
 ?>
-		<!-- Här ska den visas resultat efter ändring -->
-	<div id="here"></div>
-	<script>
-	// Koden för att ändra personliga uppgifter
-	// Definera knappen ändra personliga uppgifter
-	let change1 = document.getElementById("change1");
-	if(change1 != null)
-	{
-		// Lägger till händelsehantering för knappen
-		change1.addEventListener("click", () => {
-		// Deklarera de önskade data från formulärdata
-        let fullname = document.getElementById("fullname").value;
-        let epost = document.getElementById("epost").value;
-        let mobnr = document.getElementById("mobnr").value;
-        let age = document.getElementById("age").value;
-        let title = document.getElementById("title").value;
-        let lang = document.getElementById("lang").value;
-        let id = document.getElementById("hid").value;
-        let json =  {"id": id, "fullname": fullname, "epost": epost, "mobnr": mobnr, "age": age, "lang": lang, "title": title};
-        // Starta Ajax förfrågan
-        let xmlhttp = new XMLHttpRequest();
-         // Definera HTTP-metoden och länken som skickas
-        xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_pres/1", true);
-        xmlhttp.setRequestHeader('Content-Type', 'application/json');
-         // Skicka json data
-        xmlhttp.send( JSON.stringify(json) );
-         // När lyckas resultatet visa då ändringsbekräftelse.
-        xmlhttp.onload = function() {
-			// Omvandla json data till Javascript objekt
-			let jsonData = JSON.parse( this.responseText );
-			// Itrera dessa objektsdata
-			for(let i=0; i < jsonData.length; i++){
-					// Visa ändringsbekräftelse
-					document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
-			}
-        }
-  })
-}
+    <!-- Här ska den visas resultat efter ändring -->
+    <div id="here"></div>
+    <script>
+    // Koden för att ändra personliga uppgifter
+    // Definera knappen ändra personliga uppgifter
+    let change1 = document.getElementById("change1");
+    if (change1 != null) {
+        // Lägger till händelsehantering för knappen
+        change1.addEventListener("click", () => {
+            // Deklarera de önskade data från formulärdata
+            let fullname = document.getElementById("fullname").value;
+            let epost = document.getElementById("epost").value;
+            let mobnr = document.getElementById("mobnr").value;
+            let age = document.getElementById("age").value;
+            let title = document.getElementById("title").value;
+            let lang = document.getElementById("lang").value;
+            let id = document.getElementById("hid").value;
+            let json = {
+                "id": id,
+                "fullname": fullname,
+                "epost": epost,
+                "mobnr": mobnr,
+                "age": age,
+                "lang": lang,
+                "title": title
+            };
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_pres/1", true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+            // Skicka json data
+            xmlhttp.send(JSON.stringify(json));
+            // När lyckas resultatet visa då ändringsbekräftelse.
+            xmlhttp.onload = function() {
+                // Omvandla json data till Javascript objekt
+                let jsonData = JSON.parse(this.responseText);
+                // Itrera dessa objektsdata
+                for (let i = 0; i < jsonData.length; i++) {
+                    // Visa ändringsbekräftelse
+                    document.getElementById("here").innerHTML +=
+                        "<div class='green'>Ändringar har sparats.</div>";
+                }
+            }
+        })
+    }
 
 
 
-	// Koden för att ändra studieuppgifter
-	// Definera knappen ändra studieuppgifter
-	let change2 = document.getElementById("change2");
-	if(change2 != null)
-	{
-		// Lägger till händelsehantering för knappen
-		change2.addEventListener("click", () => {
-		// Deklarera de önskade data från formulärdata
-		let studiesschool = $("#studiesschool").val();
-		let course_name = $("#course_name").val();
-		let Starttime_studies = $("#Starttime_studies").val();
-		let Stoptime_studies = $("#Stoptime_studies").val();
-		let id2 = $("#hid3").val();
-		let json =  {"id": id2, "studiesschool": studiesschool, "course_name": course_name, "Starttime_studies": Starttime_studies, "Stoptime_studies": Stoptime_studies};
-		// Starta Ajax förfrågan
-		var xmlhttp = new XMLHttpRequest();
-			// Definera HTTP-metoden och länken som skickas
-		xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_studie/" + id2, true);
-		xmlhttp.setRequestHeader('Content-Type', 'application/json');
-			// Skicka json data
-		xmlhttp.send( JSON.stringify(json) );
-		// När lyckas resultatet visa då ändringsbekräftelse.
-		xmlhttp.onload = () => {
-			// Omvandla json data till Javascript objekt.
-			let jsonData = JSON.parse( this.responseText );
-			// Itrera dessa objektsdata.
-			for(let i=0; i < jsonData.length; i++){
-				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
-			}
-		}
-  })
+    // Koden för att ändra studieuppgifter
+    // Definera knappen ändra studieuppgifter
+    let change2 = document.getElementById("change2");
+    if (change2 != null) {
+        // Lägger till händelsehantering för knappen
+        change2.addEventListener("click", () => {
+            // Deklarera de önskade data från formulärdata
+            let studiesschool = $("#studiesschool").val();
+            let course_name = $("#course_name").val();
+            let Starttime_studies = $("#Starttime_studies").val();
+            let Stoptime_studies = $("#Stoptime_studies").val();
+            let id2 = $("#hid3").val();
+            let json = {
+                "id": id2,
+                "studiesschool": studiesschool,
+                "course_name": course_name,
+                "Starttime_studies": Starttime_studies,
+                "Stoptime_studies": Stoptime_studies
+            };
+            // Starta Ajax förfrågan
+            var xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_studie/" + id2, true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+            // Skicka json data
+            xmlhttp.send(JSON.stringify(json));
+            // När lyckas resultatet visa då ändringsbekräftelse.
+            xmlhttp.onload = () => {
+                // Omvandla json data till Javascript objekt.
+                let jsonData = JSON.parse(this.responseText);
+                // Itrera dessa objektsdata.
+                for (let i = 0; i < jsonData.length; i++) {
+                    // Visa ändringsbekräftelse.
+                    document.getElementById("here").innerHTML +=
+                        "<div class='green'>Ändringar har sparats.</div>";
+                }
+            }
+        })
 
-}
-
-
-
-	// Koden för att ändra erfarenhetersuppgifter
-	// Definera knappen ändra erfarenhetersuppgifter
-	let change3 = document.getElementById("change3");
-	if(change3 != null)
-	{
-		// Lägger till händelsehantering för knappen
-		change3.addEventListener("click", () => {
-		// Deklarera de önskade data från formulärdata
-		let workplace = $("#workplace").val();
-		let work_title = $("#work_title").val();
-		let Starttime_work = $("#Starttime_work").val();
-		let Stoptime_work = $("#Stoptime_work").val();
-		let id3 = $("#hid5").val();
-		let json =  {"id": id3, "workplace": workplace, "work_title": work_title, "Starttime_work": Starttime_work, "Stoptime_work": Stoptime_work};
-		// Starta Ajax förfrågan
-        let xmlhttp = new XMLHttpRequest();
-         // Definera HTTP-metoden och länken som skickas
-        xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_work/" + id3, true);
-        xmlhttp.setRequestHeader('Content-Type', 'application/json');
-         // Skicka json data
-        xmlhttp.send( JSON.stringify(json) );
-         // När lyckas resultatet visa då ändringsbekräftelse.
-        xmlhttp.onload = () => {
-        	// Omvandla json data till Javascript objekt.
-		 	let jsonData = JSON.parse( this.responseText );
-		 	// Itrera dessa objektsdata.
-			for(let i=0; i < jsonData.length; i++){
-				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
-			}
-        }
-  })
-
-}
-
-
-	// Koden för att ändra webbssidorsuppgifter.
-	// Definera knappen ändra webbssidorsuppgifter.
-	let change4 = document.getElementById("change4");
-	if(change4 != null)
-	{
-		// Lägger till händelsehantering för knappen.
-		change4.addEventListener("click", () => {
-		// Deklarera de önskade data från formulärdata.
-		let webpage_title = $("#webpage_title").val();
-		let webpage_url = $("#webpage_url").val();
-		let webpage_des = $("#webpage_des").val();
-		let id4 = $("#hid7").val();
-		let json =  {"id": id4, "webpage_title": webpage_title, "webpage_url": webpage_url, "webpage_des": webpage_des};
-		// Starta Ajax förfrågan
-        let xmlhttp = new XMLHttpRequest();
-         // Definera HTTP-metoden och länken som skickas
-        xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_webpages/" + id4, true);
-        xmlhttp.setRequestHeader('Content-Type', 'application/json');
-          // Skicka json data
-        xmlhttp.send( JSON.stringify(json) );
-         // När lyckas resultatet visa då ändringsbekräftelse.
-        xmlhttp.onload = () => {
-			// Omvandla json data till Javascript objekt.
-			let jsonData = JSON.parse( this.responseText );
-			// Itrera dessa objektsdata.
-			for(let i=0; i < jsonData.length; i++){
-				// Visa ändringsbekräftelse.
-				document.getElementById("here").innerHTML += "<div class='green'>Ändringar har sparats.</div>";
-			}
-        }
-  })
-
-}
+    }
 
 
 
-// Koden för att radera studieuppgiften.
-// Definera knappen radera studieuppgiften.
-let radera = document.getElementById("radera");
-	if(radera != null)
-	{
-		// Lägger till händelsehantering för knappen.
-		radera.addEventListener("click", () =>{
-			// Deklarera de önskade data från formulärdata.
-			let id3 = $("#hid3").val();
-			let tabell = $("#raderahid1").val();
-			// Starta Ajax förfrågan
-			let xmlhttp = new XMLHttpRequest();
-			// Definera HTTP-metoden och länken som skickas
-			xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id3, true);
-			// Skicka begäran.
-			xmlhttp.send();
-			// När lyckas resultatet skicka den till startsidan.
-			xmlhttp.onload = () => {
-				location.href = "index.php";
-			}
-		})
-}
+    // Koden för att ändra erfarenhetersuppgifter
+    // Definera knappen ändra erfarenhetersuppgifter
+    let change3 = document.getElementById("change3");
+    if (change3 != null) {
+        // Lägger till händelsehantering för knappen
+        change3.addEventListener("click", () => {
+            // Deklarera de önskade data från formulärdata
+            let workplace = $("#workplace").val();
+            let work_title = $("#work_title").val();
+            let Starttime_work = $("#Starttime_work").val();
+            let Stoptime_work = $("#Stoptime_work").val();
+            let id3 = $("#hid5").val();
+            let json = {
+                "id": id3,
+                "workplace": workplace,
+                "work_title": work_title,
+                "Starttime_work": Starttime_work,
+                "Stoptime_work": Stoptime_work
+            };
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_work/" + id3, true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+            // Skicka json data
+            xmlhttp.send(JSON.stringify(json));
+            // När lyckas resultatet visa då ändringsbekräftelse.
+            xmlhttp.onload = () => {
+                // Omvandla json data till Javascript objekt.
+                let jsonData = JSON.parse(this.responseText);
+                // Itrera dessa objektsdata.
+                for (let i = 0; i < jsonData.length; i++) {
+                    // Visa ändringsbekräftelse.
+                    document.getElementById("here").innerHTML +=
+                        "<div class='green'>Ändringar har sparats.</div>";
+                }
+            }
+        })
+
+    }
+
+
+    // Koden för att ändra webbssidorsuppgifter.
+    // Definera knappen ändra webbssidorsuppgifter.
+    let change4 = document.getElementById("change4");
+    if (change4 != null) {
+        // Lägger till händelsehantering för knappen.
+        change4.addEventListener("click", () => {
+            // Deklarera de önskade data från formulärdata.
+            let webpage_title = $("#webpage_title").val();
+            let webpage_url = $("#webpage_url").val();
+            let webpage_des = $("#webpage_des").val();
+            let id4 = $("#hid7").val();
+            let json = {
+                "id": id4,
+                "webpage_title": webpage_title,
+                "webpage_url": webpage_url,
+                "webpage_des": webpage_des
+            };
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("PUT", "http://localhost/Projekt_data/index.php/cv_webpages/" + id4, true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+            // Skicka json data
+            xmlhttp.send(JSON.stringify(json));
+            // När lyckas resultatet visa då ändringsbekräftelse.
+            xmlhttp.onload = () => {
+                // Omvandla json data till Javascript objekt.
+                let jsonData = JSON.parse(this.responseText);
+                // Itrera dessa objektsdata.
+                for (let i = 0; i < jsonData.length; i++) {
+                    // Visa ändringsbekräftelse.
+                    document.getElementById("here").innerHTML +=
+                        "<div class='green'>Ändringar har sparats.</div>";
+                }
+            }
+        })
+
+    }
 
 
 
-	// Koden för att radera erfarenhetersuppgiften.
-	// Definera knappen radera erfarenhetersuppgiften.
-	let radera2 = document.getElementById("radera2");
-	if(radera2 != null)
-	{
-		// Lägger till händelsehantering för knappen.
-    radera2.addEventListener("click", function(){
-    	// Deklarera de önskade data från formulärdata.
-		let id5 = $("#hid5").val();
-		let tabell = $("#raderahid2").val();
-		// Starta Ajax förfrågan
-        let xmlhttp = new XMLHttpRequest();
-         // Definera HTTP-metoden och länken som skickas
-        xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id5, true);
-         // Skicka begäran.
-        xmlhttp.send();
-        // När lyckas resultatet skicka den till startsidan.
-        xmlhttp.onload = function() {
-            location.href = "index.php";
-        }
-    })
-}
-
-		// Koden för att radera webbssidorsuppgiften.
-		// Definera knappen radera webbssidorsuppgiften.
-		let radera3 = document.getElementById("radera3");
-	if(radera3 != null)
-	{
-		// Lägger till händelsehantering för knappen.
-    radera3.addEventListener("click", function(){
-     	// Deklarera de önskade data från formulärdata.
-		let id7 = $("#hid7").val();
-		let tabell = $("#raderahid3").val();
-		// Starta Ajax förfrågan
-        let xmlhttp = new XMLHttpRequest();
-         // Definera HTTP-metoden och länken som skickas
-        xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id7, true);
-         // Skicka begäran.
-        xmlhttp.send();
-         // När lyckas resultatet skicka den till startsidan.
-        xmlhttp.onload = function() {
-            location.href = "index.php";
-        }
-    })
-}
+    // Koden för att radera studieuppgiften.
+    // Definera knappen radera studieuppgiften.
+    let radera = document.getElementById("radera");
+    if (radera != null) {
+        // Lägger till händelsehantering för knappen.
+        radera.addEventListener("click", () => {
+            // Deklarera de önskade data från formulärdata.
+            let id3 = $("#hid3").val();
+            let tabell = $("#raderahid1").val();
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id3, true);
+            // Skicka begäran.
+            xmlhttp.send();
+            // När lyckas resultatet skicka den till startsidan.
+            xmlhttp.onload = () => {
+                location.href = "index.php";
+            }
+        })
+    }
 
 
-	</script>
 
-	</div>
+    // Koden för att radera erfarenhetersuppgiften.
+    // Definera knappen radera erfarenhetersuppgiften.
+    let radera2 = document.getElementById("radera2");
+    if (radera2 != null) {
+        // Lägger till händelsehantering för knappen.
+        radera2.addEventListener("click", function() {
+            // Deklarera de önskade data från formulärdata.
+            let id5 = $("#hid5").val();
+            let tabell = $("#raderahid2").val();
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id5, true);
+            // Skicka begäran.
+            xmlhttp.send();
+            // När lyckas resultatet skicka den till startsidan.
+            xmlhttp.onload = function() {
+                location.href = "index.php";
+            }
+        })
+    }
+
+    // Koden för att radera webbssidorsuppgiften.
+    // Definera knappen radera webbssidorsuppgiften.
+    let radera3 = document.getElementById("radera3");
+    if (radera3 != null) {
+        // Lägger till händelsehantering för knappen.
+        radera3.addEventListener("click", function() {
+            // Deklarera de önskade data från formulärdata.
+            let id7 = $("#hid7").val();
+            let tabell = $("#raderahid3").val();
+            // Starta Ajax förfrågan
+            let xmlhttp = new XMLHttpRequest();
+            // Definera HTTP-metoden och länken som skickas
+            xmlhttp.open("DELETE", "http://localhost/Projekt_data/index.php/" + tabell + "/" + id7, true);
+            // Skicka begäran.
+            xmlhttp.send();
+            // När lyckas resultatet skicka den till startsidan.
+            xmlhttp.onload = function() {
+                location.href = "index.php";
+            }
+        })
+    }
+    </script>
+
+</div>
 
 <hr />
 <!-- Definera sidfoten och inkludera den -->
