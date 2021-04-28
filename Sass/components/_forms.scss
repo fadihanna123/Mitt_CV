@@ -4,16 +4,16 @@ input[type="password"],
 input[type="url"],
 #{map-get($selectorMap, txtArea)} {
   display: $block;
-  margin-bottom: $tenpx;
-  width: $hundred;
+  margin-bottom: 10px;
+  width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: $onerem;
-  font-weight: $fourhundred;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: color(white);
   background-clip: $paddingBox;
-  border: $onepx $solidbrd #ced4da;
+  border: 1px $solidbrd #ced4da;
   -webkit-appearance: $none;
   -moz-appearance: $none;
   appearance: $none;
@@ -28,46 +28,44 @@ input[type="url"],
   color: #212529;
   background-color: #fff;
   border-color: #86b7fe;
-  outline: $zero;
-  -webkit-box-shadow: $zero $zero $zero 0.25rem
-    rgba($thireteen, $onehundredten, $twohundredfiftythree, 0.25);
-  box-shadow: $zero $zero $zero 0.25rem
-    rgba($thireteen, $onehundredten, $twohundredfiftythree, 0.25);
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 #{map-get($selectorMap, contactBtn)} {
-  padding: $tenpx;
-  background: $darkblueclr;
-  color: $whiteclr;
+  padding: 10px;
+  background: color(darkBlue);
+  color: color(white);
   display: $flex;
-  margin: $zero $auto;
+  margin: 0 $auto;
 }
 
 #{map-get($selectorMap, dangerBtn)} {
-  background: $redclr;
-  padding: $tenpx;
-  color: $whiteclr;
+  background: color(red);
+  padding: 10px;
+  color: color(white);
   display: $flex;
-  margin: $zero $auto;
+  margin: 0 $auto;
 }
 
 #{map-get($selectorMap, loginBtn)} {
-  padding: $tenpx;
-  background: $darkblueclr;
-  color: $whiteclr;
+  padding: 10px;
+  background: color(darkBlue);
+  color: color(white);
   display: $flex;
-  margin: $zero $auto;
+  margin: 0 $auto;
 }
 
 #{map-get($selectorMap, btn)} {
-  padding: $tenpx;
-  background: $darkblueclr;
-  color: $whiteclr;
+  padding: 10px;
+  background: color(darkBlue);
+  color: color(white);
   display: $flex;
-  margin: $zero $auto;
+  margin: 0 $auto;
 }
 
 #{map-get($selectorMap, btnRow)} {
   display: $grid;
-  grid-template-columns: $fiftypr $thirtypr;
+  grid-template-columns: 50% 30%;
 }

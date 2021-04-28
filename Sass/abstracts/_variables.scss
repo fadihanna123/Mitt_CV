@@ -1,55 +1,17 @@
 // Variables
-$zero: 0;
-$hundred: 100%;
 $box: border-box;
 $none: none;
 $auto: auto;
 $grid: grid;
-$onefr: 1fr;
 $cntr: center;
-$tenpx: 10px;
-$darkblueclr: darkblue;
-$whiteclr: white;
 $flex: flex;
-$redclr: red;
-$block: block;
-$onerem: 1rem;
-$fourhundred: 400;
-$onepx: 1px;
 $solidbrd: solid;
 $easy: ease-in-out;
-$twentypx: 20px;
-$fortypx: 40px;
-$eighteenpx: 18px;
-$left: left;
 $font: Cambria, Georgia;
 $hid: hidden;
-$media: 1900px;
 $inlineblock: inline-block;
-$sevenhundred: 700;
-$fifteenpx: 15px;
-$three: 3;
-$sixteenpx: 16px;
-$media: 1900px;
-$paddingBox: padding-box;
 $borderColor: border-color;
 $webshadow: -webkit-box-shadow;
-$thireteen: 13;
-$onehundredten: 110;
-$twohundredfiftythree: 253;
-$italic: italic;
-$seventeenpx: 17px;
-$seventypr: 70%;
-$threehundredpx: 300px;
-$fiftyfivepr: 55%;
-$fiftypr: 50%;
-$thirtypr: 30%;
-$thirtyeightpr: 38%;
-$tenpr: 10%;
-$ninetyfivepr: 95%;
-$blackclr: black;
-$twentypr: 20%;
-$fivepr: 5%;
 
 // Selectors
 $selectorMap: (
@@ -91,3 +53,15 @@ $selectorMap: (
   centerIt: ".centerit",
   footer: ".footer",
 );
+
+$colors: (
+  darkBlue: #00008b,
+  white: #fff,
+  red: #ff0000,
+  black: #000,
+);
+
+// Functions
+@function color($val) {
+  @return map-get($colors, $val);
+}

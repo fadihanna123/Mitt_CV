@@ -4,23 +4,23 @@
 }
 
 #{map-get($selectorMap, studyLink)} {
-  margin-left: $thirtyeightpr;
-  font-size: $twentypx;
+  margin-left: 38%;
+  font-size: 20px;
 }
 
 #{map-get($selectorMap, pageLink)} {
-  margin-left: $fortypx;
-  font-size: $twentypx;
+  margin-left: 40px;
+  font-size: 20px;
 }
 
 @media screen and (max-width: $media) {
   #{map-get($selectorMap, pageLink)} {
-    font-size: $twentypx;
-    margin-left: $twentypr;
+    font-size: 20px;
+    margin-left: 20%;
   }
 
   #{map-get($selectorMap, studyLink)} {
-    margin-left: $fivepr;
-    font-size: $twentypx;
+    margin-left: 5%;
+    font-size: 20px;
   }
 }

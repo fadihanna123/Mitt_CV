@@ -1,24 +1,24 @@
 #{map-get($selectorMap, header)} {
   background: #caf288;
-  height: $hundred;
-  margin: $tenpx;
+  height: 100%;
+  margin: 10px;
   display: $grid;
-  grid-template-columns: $seventypr $hundred;
+  grid-template-columns: $seventypr 100%;
 }
 
 #{map-get($selectorMap, logoBild)} {
   width: 240px;
   height: 80px;
-  margin: $tenpx;
-  border-radius: $tenpx;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: $media) {
   #{map-get($selectorMap, header)} {
-    grid-template-columns: $onefr;
+    grid-template-columns: 1fr;
   }
 
   #{map-get($selectorMap, logoBild)} {
-    width: $ninetyfivepr;
+    width: 95%;
   }
 }

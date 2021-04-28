@@ -1,12 +1,12 @@
 #{map-get($selectorMap, menu)} {
   a {
     display: $inlineblock;
-    font-size: $eighteenpx;
+    font-size: 18px;
     -webkit-text-decoration: $none;
     text-decoration: $none;
     color: #f50000;
-    padding: $fortypx;
-    font-weight: $sevenhundred;
+    padding: 40px;
+    font-weight: 700;
   }
 }
 
@@ -14,17 +14,18 @@
   #{map-get($selectorMap, menu)} {
     #{map-get($selectorMap, link)} {
       display: $inlineblock;
-      padding: $tenpx;
-      border-right: $onepx $solidbrd #000;
+      padding: 10px;
+      border-right: 1px $solidbrd color(black);
     }
-    margin: $zero $tenpx $zero $tenpx;
-    border: $onepx $solidbrd #000;
-    border-radius: $fifteenpx;
-    margin-bottom: $tenpx;
+    margin: 0 10px 0 10px;
+    border: 1px $solidbrd color(black);
+    border-radius: 15px;
+    margin-bottom: 10px;
     text-align: $cntr;
+
     #{map-get($selectorMap, link)} :nth-child(3) {
       border: $none;
-      padding-right: $fortypx;
+      padding-right: 40px;
     }
   }
 }

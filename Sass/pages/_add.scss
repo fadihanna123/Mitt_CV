@@ -1,6 +1,6 @@
 #{map-get($selectorMap, addMain)} {
   display: $grid;
-  grid-template-columns: $onefr;
+  grid-template-columns: 1fr;
   -webkit-box-align: $cntr;
   -ms-flex-align: $cntr;
   align-items: $cntr;
@@ -8,6 +8,6 @@
   #{map-get($selectorMap, h1)},
   #{map-get($selectorMap, para)} {
     text-align: $cntr;
-    margin: $tenpx;
+    margin: 10px;
   }
 }

@@ -1,6 +1,6 @@
 #{map-get($selectorMap, contactMain)} {
   display: $grid;
-  grid-template-columns: $onefr;
+  grid-template-columns: 1fr;
   -webkit-box-align: $cntr;
   -ms-flex-align: $cntr;
   align-items: $cntr;
@@ -8,6 +8,6 @@
   h3,
   p {
     text-align: $cntr;
-    margin: $tenpx;
+    margin: 10px;
   }
 }

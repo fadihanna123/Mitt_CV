@@ -1,14 +1,14 @@
 #{map-get($selectorMap, body)} {
   font-family: $font;
-  margin: $zero;
-  font-size: $hundred;
+  margin: 0;
+  font-size: 100%;
   background-color: #f7fdee;
 }
 
 #{map-get($selectorMap, wrapper)} {
   font-family: $font;
-  font-size: $seventeenpx;
-  margin: $zero $auto;
+  font-size: 17px;
+  margin: 0 $auto;
   overflow: $hid;
 }
 
@@ -25,78 +25,78 @@
 }
 
 #{map-get($selectorMap, main)} {
-  margin: $zero $tenpx $zero $tenpx;
-  border: $onepx $solidbrd #000;
-  border-radius: $fifteenpx;
+  margin: 0 10px 0 10px;
+  border: 1px $solidbrd color(black);
+  border-radius: 15px;
   overflow: $hid;
   display: $grid;
-  grid-template-columns: repeat($three, $onefr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #{map-get($selectorMap, left)} {
-  padding: $tenpx;
-  height: $fourhundred;
+  padding: 10px;
+  height: 400;
 }
 
 #{map-get($selectorMap, left2)} {
-  border: $onepx $solidbrd #000;
+  border: 1px $solidbrd color(black);
   width: $auto;
   height: $auto;
-  padding: $tenpx;
-  margin-left: $tenpx;
-  margin-top: $twentypx;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
   display: $grid;
-  grid-template-columns: $onefr;
-  margin: $tenpx $tenpx $zero $tenpx;
+  grid-template-columns: 1fr;
+  margin: 10px 10px 0 10px;
 }
 
 #{map-get($selectorMap, center)} {
-  border-left: $onepx $solidbrd #000;
-  border-right: $onepx $solidbrd #000;
-  padding: $tenpx;
+  border-left: 1px $solidbrd color(black);
+  border-right: 1px $solidbrd color(black);
+  padding: 10px;
 }
 
 #{map-get($selectorMap, right)} {
-  padding: $tenpx;
+  padding: 10px;
 }
 
 #{map-get($selectorMap, right2)} {
   float: $left;
-  width: $threehundredpx;
-  padding: $tenpx;
+  width: 300px;
+  padding: 10px;
 }
 
 #{map-get($selectorMap, row)} {
   display: $grid;
-  grid-template-columns: 55% $seventypr;
+  grid-template-columns: 55% 70%;
 }
 
 #{map-get($selectorMap, centerIt)} {
-  margin-left: $tenpr;
-  font-size: $eighteenpx;
+  margin-left: 10%;
+  font-size: 18px;
 }
 
 @media screen and (max-width: $media) {
   #{map-get($selectorMap, wrapper)} {
-    width: $hundred;
-    margin: $zero;
+    width: 100%;
+    margin: 0;
   }
 
   #{map-get($selectorMap, main)} {
-    grid-template-columns: $onefr;
+    grid-template-columns: 1fr;
   }
 
   #{map-get($selectorMap, left)},
   #{map-get($selectorMap, center)},
   #{map-get($selectorMap, right)},
   #{map-get($selectorMap, left2)} {
-    border: $onepx $solidbrd $blackclr;
+    border: 1px $solidbrd color(black);
   }
 
   #{map-get($selectorMap, contactMain)},
   #{map-get($selectorMap, row)},
   #{map-get($selectorMap, changeMain)} {
-    grid-template-columns: $onefr;
+    grid-template-columns: 1fr;
     text-align: $cntr;
   }
 }
