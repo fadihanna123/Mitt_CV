@@ -2,6 +2,7 @@
 import { Pres, Studie, Work, Webpages } from "./typings/";
 
 // show visar alla data i startsida beror på detskickade tabellnamn.
+
 const show = (tabell: string) => {
   if ((tabell = "cv_pres")) {
     // Om tabellnamn är cv_pres
@@ -9,6 +10,7 @@ const show = (tabell: string) => {
       .then((res) => res.json())
       .then((data: []) => {
         let output = '<span class="bold">Fullständigt namn: </span>';
+
         data.forEach((post: Pres) => {
           output += `${post.fullname}<br /> 
         			<span class="bold">Ålder:</span>
@@ -19,6 +21,7 @@ const show = (tabell: string) => {
         		<span class="bold">Mobilnummer:</span><br />
         		${post.mobnr} <br /><br /><br />`;
         });
+
         document.getElementById("here1")!.innerHTML = output;
       });
   } // Slut om tabellnamn är cv_pres
@@ -39,6 +42,7 @@ const show = (tabell: string) => {
         		<span class='bold'>Sluttid: </span>
         		${post.Stoptime_studies}<br /> <a href='change.php?tabell=cv_studie&id=${post.id}'>Redigera denna del</a> <br /><br />`;
         });
+
         document.getElementById("here2")!.innerHTML =
           output +
           '<a href="add.php?tabell=cv_studie">Lägg till data</a><br />';
@@ -60,6 +64,7 @@ const show = (tabell: string) => {
         		 <br /><span class='bold'>Starttid: </span>${post.Starttime_work} 
         		  <br /><span class='bold'>Sluttid: </span>${post.Stoptime_work}<br /> <a href='change.php?tabell=cv_work&id=${post.id}'>Redigera denna del</a><br /><br />`;
         });
+
         document.getElementById("here3")!.innerHTML =
           output + '<a href="add.php?tabell=cv_work">Lägg till data</a><br />';
       });
@@ -71,6 +76,7 @@ const show = (tabell: string) => {
       .then((res) => res.json())
       .then((data: []) => {
         let output = ``;
+
         data.forEach((post: Webpages) => {
           output +=
             `<span class='bold'>Webbsidatitel:</span> <span>${post.webpage_title}</span>
@@ -80,6 +86,7 @@ const show = (tabell: string) => {
             (`${post.webpage_url}` ? `${post.webpage_url}` : "#") +
             `'>${post.webpage_title}</a> <br /><span class='bold'>Beskrivning: </span>${post.webpage_des} <br /> <a href='change.php?tabell=cv_webpages&id=${post.id}'>Redigera denna del</a><br /><br /><br />`;
         });
+
         document.getElementById("here4")!.innerHTML =
           output +
           '<a href="add.php?tabell=cv_webpages">Lägg till data</a><br />';
